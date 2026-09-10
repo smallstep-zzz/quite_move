@@ -1,17 +1,23 @@
 # Quiet Move Simulator — 정적 웹 사이트
 
 대한민국(수도권) 2026년 가을, 수능 D-66 한 주간을 simulate했던
-**Quiet Move Simulator**(A~Q 17개 산출물)를 마크다운 라이브러리로 렌더링하는
+**Quiet Move Simulator** 산출물을 마크다운 라이브러리로 렌더링하는
 **정적 웹 사이트**입니다. Flask 없이 GitHub Pages에 바로 게시할 수 있습니다.
 
 ## 구조
 
 ```
-output/*.md                 산출물 원본 (A~Q 17개 + 00_index)
-build_site.py               정적 사이트 생성기
+output/*.md                 v1 · 일상 시뮬레이션 산출물 (A~Q 17개 + 00_index)
+output_v2/*.md              v2 · 취미·여가 심층 리서치 (Domain 01~06 + 00_index)
+build_site.py               정적 사이트 생성기 (두 섹션 지원)
 docs/                       생성된 정적 사이트 (GitHub Pages 소스)
 requirements.txt            markdown (빌드용)
 ```
+
+- **v1** — 일상 시뮬레이션 (가정·취업·직장, Quiet Move 6개)
+- **v2** — 취미·여가 심층 리서치 (포켓몬 카드 / LOL / 낚시 / 패션 / 러닝 / 교차 비교)
+
+홈페이지(index.html)와 왼쪽 사이드바에서 두 섹션이 나뉘어 표시됩니다.
 
 ## 사이트 생성
 
@@ -20,7 +26,7 @@ pip install -r requirements.txt
 python build_site.py
 ```
 
-`docs/`에 `index.html` + `01_world_state.html` ~ `17_assumptions_unknowns.html`
+`docs/`에 `index.html`(홈), v1 문서 17개, v2 문서 6개
 (+ `style.css`, `app.js`, 원본 MD 복사본)이 생성됩니다.
 원본 마크다운을 수정한 뒤 다시 실행하면 덮어씁니다.
 
@@ -87,12 +93,12 @@ jobs:
 
 ## 페이지 기능
 
-- 좌측: 문서 목록(검색) + 문서 내 목차(스크롤 스파이)
+- 좌측 사이드바: **두 섹션 분리 표시** (v1 · 일상 시뮬레이션 / v2 · 취미·여가 심층 리서치) + 문서 검색 + 문서 내 목차(스크롤 스파이)
 - 상단: 인쇄/PDF, 코드 블록 줄바꿈, 원본 MD 다운로드
-- 하단: 이전/다음 문서 이동
-- `/`(index.html): 출력 카드 목록
+- 하단: 같은 섹션 내 이전/다음 문서 이동
+- 홈(index.html): 두 섹션 인덱스(00_index) + 출력 카드 그리드
 
 ## 참고
 
-- 출력 내용은 웹 리서치(World State)를 배경으로 한 시뮬레이션 결과입니다.
-  실제 사용자 수요·통계로 해석하거나 마케팅 근거로 사용하면 안 됩니다(출력 Q 참고).
+- v1·v2 출력 내용 모두 웹 리서치(World State)를 배경으로 한 시뮬레이션 결과입니다.
+  실제 사용자 수요·통계로 해석하거나 마케팅 근거로 사용하면 안 됩니다(출력 Q, v2 00_index 참고).

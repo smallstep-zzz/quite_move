@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Domain 06 · Domain 06 — 교차 비교 (Quiet Move의 공통 구조) — Quiet Move Simulator — Quiet Move Simulator</title>
+<meta name="description" content="Domain 06 — 교차 비교 (Quiet Move의 공통 구조)">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 시뮬레이션 + 심층 리서치</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="home" href="index.html"><span class="code">🏠</span> 홈 · 두 섹션 보기</a>
+<div class="sec-label">v1 · 일상 시뮬레이션 (A~Q)</div>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a>
+<div class="sec-label">v2 · 취미·여가 심층 리서치</div>
+<a class="" href="01_pokemon_card.html"><span class="code">01</span> Domain 01 — 포켓몬 카드 (수집 · 투자 · 개봉)</a>
+<a class="" href="02_lol.html"><span class="code">02</span> Domain 02 — LOL (실시간 경쟁 · 복기 루프)</a>
+<a class="" href="03_fishing.html"><span class="code">03</span> Domain 03 — 낚시 (현장 활동 · 출조 준비)</a>
+<a class="" href="04_fashion.html"><span class="code">04</span> Domain 04 — 패션 쇼핑 (반복 구매 · 사이즈 · 위시)</a>
+<a class="" href="05_running.html"><span class="code">05</span> Domain 05 — 러닝 (자기계발 · 기록 · 크루)</a>
+<a class="active" href="06_cross_domain.html"><span class="code">06</span> Domain 06 — 교차 비교 (Quiet Move의 공통 구조)</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / v2 · Domain 06</div>
+      <h1>Domain 06 — 교차 비교 (Quiet Move의 공통 구조)</h1>
+      <div class="meta">v2 심층 리서치 · Domain 06 — 교차 비교 (Quiet Move의 공통 구조) · WORLD FACT / REFLECTION 태그</div>
+    </div>
+    <div class="toolbar">
+  <button onclick="window.print()">인쇄 / PDF</button>
+  <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+  <a href="06_cross_domain.md" download><button>원본 MD</button></a>
+</div>
+    <article class="article" id="article"><h1>Domain 06 — 교차 비교 (Quiet Move의 공통 구조)</h1>
+<blockquote>
+<p>v2 핵심 결론: 서로 다른 5개 분야에서 Quiet Move의 구조가 <strong>하나로 수렴</strong>한다는 발견. · 파일: 06_cross_domain.md</p>
+</blockquote>
+<hr />
+<h2>교차 비교 — 5개 분야의 Quiet Move</h2>
+<table>
+<thead>
+<tr>
+<th>분야</th>
+<th>집착</th>
+<th>지배 마찰</th>
+<th>Quiet Move</th>
+<th>한 문장 (기준점)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>포켓몬 카드</td>
+<td>시세 재확인</td>
+<td>'결정 불안'(확인-후회 루프)</td>
+<td>개봉 앵커 1장</td>
+<td><strong>판단의 기준점</strong> 1개</td>
+</tr>
+<tr>
+<td>LOL</td>
+<td>복기 루프</td>
+<td>게임 후 '해석 과다'</td>
+<td>패배 1문장 노트</td>
+<td><strong>자기 판단의 기준점</strong> 1개</td>
+</tr>
+<tr>
+<td>낚시</td>
+<td>출조 준비·기록</td>
+<td>정보 분산+빈손 기록 손실</td>
+<td>조행 리포트 5분</td>
+<td><strong>순간 기록의 기준점</strong> 1개</td>
+</tr>
+<tr>
+<td>패션 쇼핑</td>
+<td>사이즈 불확실</td>
+<td>반복 재판단(확인 루프)</td>
+<td>사이즈카드 1장</td>
+<td><strong>신체 기준점</strong> 1개</td>
+</tr>
+<tr>
+<td>러닝</td>
+<td>페이스·부상</td>
+<td>숫자만 있고 감각 데이터 없음</td>
+<td>주간 1문장 회고</td>
+<td><strong>몸의 기준점</strong> 1개</td>
+</tr>
+</tbody>
+</table>
+<h3>수렴 구조 (CAUSAL INFERENCE)</h3>
+<pre><code>모든 분야에서 사람이 반복 지불하는 비용은
+&quot;결정 전 기준이 없어서 반복하는 재확인·재비교·재판단&quot;이다.
+
+Quiet Move = '기준점(앵커) 1개'를 기존 흐름에 추가하는 것.
+  - 개봉 시대 앵커(포켓몬)
+  - 패배 1문장(롤)
+  - 조행 6칸(낚시)
+  - 사이즈 4cm(패션)
+  - 주간 감각 3문장(러닝)
+</code></pre>
+<blockquote>
+<p>즉, 스펙 §36이 노리는 '계속 검색/비교/확인/기록'의 공통 원인은
+<strong>각자가 이미 애매한 상태로 매번 새로 판단하기 때문</strong>이다. 기준점이 생기면 루프가 멈춘다.</p>
+</blockquote>
+<hr />
+<h2>Quietness Score 종합 (스펙 §35, 1~5점)</h2>
+<table>
+<thead>
+<tr>
+<th>후보</th>
+<th>행동변화</th>
+<th>효과</th>
+<th>반복</th>
+<th>적응비용</th>
+<th>호환성</th>
+<th>감정↓</th>
+<th>시간↓</th>
+<th>인지↓</th>
+<th>경제</th>
+<th>확장</th>
+<th><strong>총점</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>패션 사이즈카드</strong></td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td><strong>45</strong></td>
+</tr>
+<tr>
+<td>낚시 조행 리포트</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td><strong>41</strong></td>
+</tr>
+<tr>
+<td>포켓몬 앵커 1장</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td><strong>40</strong></td>
+</tr>
+<tr>
+<td>LOL 1문장 노트</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td><strong>40</strong></td>
+</tr>
+<tr>
+<td>러닝 주간 회고</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td><strong>40</strong></td>
+</tr>
+</tbody>
+</table>
+<p>공통: <strong>적응 비용 5/5(기존 행동 100% 유지), 호환성 4~5/5(신규 앱 불요 80%)</strong>.</p>
+<hr />
+<h2>분야 성격별 Quiet Move 형태의 차이 (스펙 §5 대조)</h2>
+<table>
+<thead>
+<tr>
+<th>성격</th>
+<th>사례 분야</th>
+<th>Quiet Move 형태</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>강한 수집 욕구</td>
+<td>포켓몬 카드</td>
+<td>'판단 기준점' (앵커)</td>
+<td>시세·희귀도라는 <strong>외부 변수</strong>를 내부 기준으로 고정</td>
+</tr>
+<tr>
+<td>실시간 경쟁</td>
+<td>LOL</td>
+<td>'자기 판단 1문장'</td>
+<td>감정 처리(해석)를 <strong>게임 밖</strong>으로 끄집어냄</td>
+</tr>
+<tr>
+<td>현장 활동</td>
+<td>낚시</td>
+<td>'순간 기록 6칸'</td>
+<td>정보가 다수의 데이터(물때·수온)로 분산된 <strong>현장성</strong>에 대응</td>
+</tr>
+<tr>
+<td>반복 구매</td>
+<td>패션 쇼핑</td>
+<td>'신체 기준 1회 기록'</td>
+<td>매번 재판단하는 <strong>사이즈 불확실</strong> 제거</td>
+</tr>
+<tr>
+<td>자기계발</td>
+<td>러닝</td>
+<td>'감각 3문장'</td>
+<td>앱의 <strong>숫자 기록</strong>으로는 잡히지 않는 몸 데이터 보충</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>공통 루프(반복 확인)는 같고, 기준점의 '종류'만 분야에 따라 달라진다.</strong> (CAUSAL INFERENCE)</p>
+<hr />
+<h2>분야 공통으로 반복되는 요구 패턴</h2>
+<ol>
+<li><strong>기준점 1개</strong> (결정 전 판단의 고정)</li>
+<li><strong>기록의 단일화</strong> (여러 앱·스샷·메모 분산 정리 — 스펙 §24)</li>
+<li><strong>회고의 경량화</strong> (R1~R8을 전 과정으로 강제하지 않고 1문장으로 시작)</li>
+<li><strong>부정적 앵커의 프레임 전환</strong> (손실·부상·자괴감 기억을 '사건 정보'로)</li>
+</ol>
+<hr />
+<h2>카테고리별 프로토타입 후보 (PRODUCT HYPOTHESIS)</h2>
+<table>
+<thead>
+<tr>
+<th>우선순위</th>
+<th>후보</th>
+<th>구현 형태</th>
+<th>대상 앵커</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>기준점 카드 시스템</strong></td>
+<td>A6 카드 1장 × 분야별 템플릿(공용 구조)</td>
+<td>모든 분야</td>
+</tr>
+<tr>
+<td>2</td>
+<td>사이즈카드 (패션 최고 점수)</td>
+<td>4cm 줄자 기록 + 상품 비교 UI</td>
+<td>패션</td>
+</tr>
+<tr>
+<td>3</td>
+<td>조행 리포트 (낚시 2위)</td>
+<td>6칸 메모 + 조황앱 스크랩</td>
+<td>낚시</td>
+</tr>
+<tr>
+<td>4</td>
+<td>개봉 앵커 (포켓몬)</td>
+<td>개봉 시점 스크린샷 자동 제안</td>
+<td>수집</td>
+</tr>
+<tr>
+<td>5</td>
+<td>LOL 1문장 / 러닝 감각 3줄</td>
+<td>전적·러닝 앱의 '1줄 리뷰' 필드</td>
+<td>경쟁·자기계발</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>이 목록을 <strong>제품 발명</strong>으로 곧바로 취급하지 않는다. 실세계 파일럿(Counterfactual 실험) 후
+실제 동작 조건(PERSONA ASSUMPTION 검증)을 확인해야 한다(스펙 §38, §40).</p>
+</blockquote>
+<hr />
+<h2>실사용 전제</h2>
+<ul>
+<li>위의 모든 Quiet Move는 <strong>기존 사이트·앱·종이 위에서 동작</strong> (0원, 적응 비용 0).</li>
+<li>"사람에게 새로운 행동을 가르치지 않고, 이미 하고 있는 행동의 한 지점만 바꾼다." (스펙 §39)</li>
+<li>각 분야의 WORLD FACT(시장·문화)는 웹 리서치 기반, 개별 인물의 감정·기억·회고는 시뮬레이션(가정)임을 재확인.</li>
+</ul></article>
+    <div class="pager"><a class="prev" href="05_running.html"><span class="cap">‹ v2</span> Domain 05 — 러닝 (자기계발 · 기록 · 크루)</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

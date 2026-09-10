@@ -1,43 +1,66 @@
-# Quiet Move Simulator — 출력 인덱스
+# Quiet Move Simulator v2 — 출력 인덱스
 
-> 대한민국(수도권) 2026년 가을, 수능 D-66 한 주간의 심층 인간 시뮬레이션 결과.
-> 15개 대표 페르소나, 7일 일상 트레이스, Observer 분석, 6개 Quiet Move.
+> v2는 "일반 일상의 평균 문제"가 아니라, **특정 분야에 깊이 빠진 사람이 그 세계 안에서 살아가는 과정**을
+> 행동·감정·기억·적응·회고(Reflection) 축으로 심층 추적하는 시스템입니다.
+> 각 분야 파일은 **A~M 13개 섹션**을 포함합니다.
 
 ---
 
-## 전체 산출물 (A~Q)
+## v2 운영 원칙 (v1과의 차이)
 
-| # | 섹션 | 파일 | 핵심 내용 |
+| 구분 | v1 (output/) | v2 (output_v2/) |
+|---|---|---|
+| 대상 | 일상 시뮬레이션 (가정·취업·직장) | **특수 분야 심층** (취미·투자·경쟁·구매) |
+| 질문 | 불만·니즈? | **집착·반복·회고·적응**은 무엇인가 |
+| 핵심 | 전환점(Turning Point) | **Reflection(회고)과 부적응적 해석** |
+| 산출 | Quiet Move (일상 루프) | Quiet Move (분야 루프 + 인지 과정) |
+| 구분 태그 | 실측/추론/미검증 | **WORLD FACT / PERSONA ASSUMPTION / SIMULATED… / REFLECTION / CAUSAL INFERENCE** 등 |
+
+> v2에서 특히 중요하게 보는 것(스펙 §19, §23): **사람이 생각을 정리하는 과정 자체의 마찰**과
+> **수작업으로 만든 개인 시스템(엑셀·사진첩·셀프 카톡·즐겨찾기)**.
+
+---
+
+## 분야 선정 (서로 다른 성격, 스펙 §5)
+
+| 파일 | 분야 | 성격 | 대표 페르소나 수 |
 |---|---|---|---|
-| — | 목차 | [00_index.md](00_index.md) | 이 페이지 |
-| A | World State | [01_world_state.md](01_world_state.md) | 2026 한국의 살아가는 조건 (제도·통계·시장·인프라) |
-| B | Persona Matrix | [02_persona_matrix.md](02_persona_matrix.md) | 15개 대표 페르소나와 갈등 구조 메트릭스 |
-| C | Persona State | [03_persona_state.md](03_persona_state.md) | Day-0 시점 각 페르소나의 정신 상태 스냅샷 |
-| D | Daily Simulation Trace | [04_daily_simulation_trace.md](04_daily_simulation_trace.md) | 9/14(월)~9/20(일) 실제 생활 흐름 기록 |
-| E | Mental State Timeline | [05_mental_state_timeline.md](05_mental_state_timeline.md) | 시간순 감정·기분·생각 변화 |
-| F | Memory Accumulation | [06_memory_accumulation.md](06_memory_accumulation.md) | 기억·감정 누적과 재활성화 체인 |
-| G | Turning Points | [07_turning_points.md](07_turning_points.md) | 행동·상태 전환점 기록 |
-| H | Interaction Loops | [08_interaction_loops.md](08_interaction_loops.md) | 자기강화 상호작용 고리와 해제 |
-| I | Deep Causal Chains | [09_deep_causal_chains.md](09_deep_causal_chains.md) | 행동의 깊은 원인(REVISIT 포함) |
-| J | Branch Map | [10_branch_map.md](10_branch_map.md) | 인과 분기 지도와 검증 |
-| K | Friction Map | [11_friction_map.md](11_friction_map.md) | 행동·감정·사회적 비용 지도 |
-| L | Quiet Moves | [12_quiet_moves.md](12_quiet_moves.md) | 기존 흐름 속 작은 개입점 6개 |
-| M | Minimal Products | [13_minimal_products.md](13_minimal_products.md) | 각 QM의 최소 제품 명세 |
-| N | Counterfactual Results | [14_counterfactual_results.md](14_counterfactual_results.md) | 개입 전후 정량 비교 |
-| O | Cross-Persona Validation | [15_cross_persona_validation.md](15_cross_persona_validation.md) | 페르소나별 재현성 |
-| P | Cross-Region Validation | [16_cross_region_validation.md](16_cross_region_validation.md) | 지역별 차이·조정표 |
-| Q | Assumptions / Unknowns | [17_assumptions_unknowns.md](17_assumptions_unknowns.md) | 사실/가정/한계 구분 |
+| [01_pokemon_card.md](01_pokemon_card.md) | 포켓몬 카드 | **강한 수집 욕구 + 투자(시세)** | 3 |
+| [02_lol.md](02_lol.md) | LOL | **실시간 경쟁(복기 루프)** | 3 |
+| [03_fishing.md](03_fishing.md) | 낚시 | **현장 활동(출조 준비)** | 3 |
+| [04_fashion.md](04_fashion.md) | 패션 쇼핑 | **반복 구매(사이즈·위시)** | 3 |
+| [05_running.md](05_running.md) | 러닝 | **자기계발(기록·크루)** | 3 |
+| [06_cross_domain.md](06_cross_domain.md) | **교차 비교** | Quiet Move 비교 + Quietness Score | — |
 
 ---
 
-## 빠른 경로
-
-- **결론만 보기**: L → N
-- **근거 전체 보기**: A → B → D → G/H/I → L
-- **제품화 고민**: L → M → N
+## 각 파일의 공통 구조 (스펙 §37)
 
 ```
-World State(A) → Persona(B,C) → 일상 Trace(D) → 감정/기억(E,F)
-→ 전환점(G)·루프(H)·인과(I,J)·마찰(K)
-→ Quiet Move(L) → 최소제품(M) → 검증(N,O,P) → 한계(Q)
+A. Domain World        분야의 세계 상태 (WORLD FACT 위주)
+B. Domain Persona      대표 참가자 (정체성·집착·장비·지출·시간)
+C. Behavioral Loop     반복되는 행동 구조 (분야의 중독적 루프)
+D. Mental Timeline     감정 / 기분 / 생각의 시간적 흐름
+E. Memory Timeline     과거 경험·기억의 누적과 재활성화
+F. Adaptation Map      불편에 대응해 스스로 만든 해결책(개인 도구)
+G. Reflection Timeline 회고가 발생한 순간과 내용 (R1~R8)
+H. Abstraction/General 사람이 자신의 경험에서 뽑은 (부정확할 수 있는) 패턴
+I. Turning Points      행동·사고가 바뀐 순간
+J. Friction Map        시간·돈·행동·감정·인지·사회적 비용
+K. Quiet Move Candidates  작은 개입 후보 (행동 + 인지 과정)
+L. Minimal Product     가장 작은 제품 형태
+M. Counterfactual      개입 전후 비교 + Quietness Score
 ```
+
+---
+
+## 결과물 읽는 법
+
+- 태그 `(WORLD FACT)` = 웹 리서치로 확인된 실제 세계 조건
+- 태그 `(PERSONA ASSUMPTION)` = 페르소나 설정(가정)
+- 태그 `(SIMULATED …)` / `(REFLECTION)` = 시뮬레이션에서 발생한 경험·생각·감정·회고
+- 태그 `(CAUSAL INFERENCE)` = 관측에서 유도한 인과 해석 (가설)
+- 태그 `(QUIET MOVE)` / `(PRODUCT HYPOTHESIS)` = 개입 가설
+
+> **중요**: v2 산출물은 "사람을 조사해 실제 수요를 찾은 결과"가 아니다.
+> 스펙 §38 — 시뮬레이션 결과를 실제 사용자 조사처럼 표현하지 않는다.

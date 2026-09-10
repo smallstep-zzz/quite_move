@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Domain 02 · Domain 02 — LOL (실시간 경쟁 · 복기 루프) — Quiet Move Simulator — Quiet Move Simulator</title>
+<meta name="description" content="Domain 02 — LOL (실시간 경쟁 · 복기 루프)">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 시뮬레이션 + 심층 리서치</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="home" href="index.html"><span class="code">🏠</span> 홈 · 두 섹션 보기</a>
+<div class="sec-label">v1 · 일상 시뮬레이션 (A~Q)</div>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a>
+<div class="sec-label">v2 · 취미·여가 심층 리서치</div>
+<a class="" href="01_pokemon_card.html"><span class="code">01</span> Domain 01 — 포켓몬 카드 (수집 · 투자 · 개봉)</a>
+<a class="active" href="02_lol.html"><span class="code">02</span> Domain 02 — LOL (실시간 경쟁 · 복기 루프)</a>
+<a class="" href="03_fishing.html"><span class="code">03</span> Domain 03 — 낚시 (현장 활동 · 출조 준비)</a>
+<a class="" href="04_fashion.html"><span class="code">04</span> Domain 04 — 패션 쇼핑 (반복 구매 · 사이즈 · 위시)</a>
+<a class="" href="05_running.html"><span class="code">05</span> Domain 05 — 러닝 (자기계발 · 기록 · 크루)</a>
+<a class="" href="06_cross_domain.html"><span class="code">06</span> Domain 06 — 교차 비교 (Quiet Move의 공통 구조)</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / v2 · Domain 02</div>
+      <h1>Domain 02 — LOL (실시간 경쟁 · 복기 루프)</h1>
+      <div class="meta">v2 심층 리서치 · Domain 02 — LOL (실시간 경쟁 · 복기 루프) · WORLD FACT / REFLECTION 태그</div>
+    </div>
+    <div class="toolbar">
+  <button onclick="window.print()">인쇄 / PDF</button>
+  <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+  <a href="02_lol.md" download><button>원본 MD</button></a>
+</div>
+    <article class="article" id="article"><h1>Domain 02 — LOL (실시간 경쟁 · 복기 루프)</h1>
+<blockquote>
+<p>분야 성격: <strong>실시간 경쟁 + 성장 집착 (연패/복기/빌드)</strong> · 파일: 02_lol.md</p>
+</blockquote>
+<hr />
+<h2>A. Domain World — 분야의 세계 상태</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+<th>태그</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>메타 최신 패치</td>
+<td><strong>패치 26.17</strong> 최신 (2026.9.5~). 신규 챔피언 '유나라' 합류, 편입 173 챔피언</td>
+<td>WORLD FACT</td>
+</tr>
+<tr>
+<td>티어 정보 채널</td>
+<td>MetaBot/SeeMeta/METAsrc 각각 매일 승률·픽률 재계산. 소스마다 순위 상이(메타를 '몇 개나' 보느냐가 마찰)</td>
+<td>WORLD FACT</td>
+</tr>
+<tr>
+<td>현재 S급 예시</td>
+<td>서폿 세라핀·소나, 탑 모데카이저·케일, 원딜 미스 포츈·케틀린, 미드 말자하·야스오</td>
+<td>WORLD FACT</td>
+</tr>
+<tr>
+<td>데이터 소비 문화</td>
+<td>전적 사이트·리플레이·유튜브·빌드 가이드가 '복기'의 표준 회로</td>
+<td>WORLD FACT</td>
+</tr>
+<tr>
+<td>게임 후 복기</td>
+<td>게임 종료 → 전적 확인 → 복기 → 빌드 검색 → 재게임의 순환이 일반적</td>
+<td>WORLD FACT</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>B. Domain Persona — 대표 참가자 3</h2>
+<h3>P-L1 정민수 (25) — 실력 집착 솔랭러 (주인공)</h3>
+<ul>
+<li>정체성/집착: "왜 졌는지 모르는 상태를 가장 싫어함" — 결과보다 <strong>통제가능성</strong>에 집착 (스펙 §14 예시의 실제화). (PERSONA ASSUMPTION)</li>
+<li>숙련도: 골드~플래티넘. 챔피언풀 6개. 빌드 따라가는 수준 (금손 아님).</li>
+<li>목표: 다이아 승급, 본인 인증. 개인 트레이닝에 몰입.</li>
+<li>시간: 평일 2시간, 주말 4시간(야간). 주말 밤샘 1회.</li>
+<li>지출: RP 소액, 신속히 변하는 빌드를 위한 '시즌 패스'류, 크루 대회 참가비.</li>
+<li>성공 경험(MEMORY): 플래티넘 승급전에서 미드 다리우스로 +30 점수 — "내 판단이 맞았다" 기억.</li>
+<li>실패 경험(MEMORY): 다이아 승급전 2번째 연패 → 밤샘 추가 3판 → 승급 자체를 미룸(불안 회피).</li>
+</ul>
+<h3>P-L2 최예린 (22) — 친구들과 즐기는 플레이어</h3>
+<ul>
+<li>정체성/집착: 혼자보단 4인 듀오. ARAM·일반 선호. "즐기는 사람이 잘한다" 신념.</li>
+<li>장비: 게임용 노트북(중저가), 마이크·디코. 보조금식 소액.</li>
+<li>회고: 게임 후 '오늘 웃긴 플레이'를 카톡/클립으로 공유 — <strong>자발적 회고가 긍정 방향</strong>.</li>
+</ul>
+<h3>P-L3 박건 (18) — 초보 (막 시작)</h3>
+<ul>
+<li>정체성/집착: 모두에게 "캐리하고 싶다" 욕구 강함. 손따라가기 어려움.</li>
+<li>우려: 소위 "게임에 진심" 밈 부담, 친구들 실력 격차.</li>
+<li>회고: 패배 시 "컴퓨터 잘못/파밍" 등 외부 귀인 70%. (성급한 원인 추론)</li>
+</ul>
+<hr />
+<h2>C. Behavioral Loop — 분야의 반복 구조</h2>
+<pre><code>게임(한 판) → 승/패 → 전적 확인(감정적) → 복기(사이트·리플레이)
+→ 빌드/메타 검색(유튜브·거시레포트) → 룬/아이템 설정 → 다시 게임
+</code></pre>
+<p>이 루프의 특징: <strong>결과의 감정 처리가 '게임'이 아니라 '확인·검색'으로 이동</strong>. (CAUSAL INFERENCE)</p>
+<h3>반복 빈도 (P-L1, 주간)</h3>
+<table>
+<thead>
+<tr>
+<th>루프</th>
+<th>횟수/주</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>게임</td>
+<td>16~20판</td>
+<td>—</td>
+</tr>
+<tr>
+<td>전적/복기 루틴</td>
+<td>5~8회</td>
+<td>사이트 2~3곳 순회</td>
+</tr>
+<tr>
+<td>빌드·메타 검색</td>
+<td>4~6회</td>
+<td>게임 후 반복</td>
+</tr>
+<tr>
+<td>새벽 밤샘</td>
+<td>1회</td>
+<td>후회 농후</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>D. Mental Timeline — 감정·기분·생각</h2>
+<table>
+<thead>
+<tr>
+<th>시점</th>
+<th>상태</th>
+<th>태그</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>랭크 시작 전</td>
+<td>긴장·목표 의식</td>
+<td>SIMULATED EMOTION</td>
+</tr>
+<tr>
+<td>연패 중</td>
+<td>분노 0.9 → "왜?" 반복 질문</td>
+<td>SIMULATED EMOTION</td>
+</tr>
+<tr>
+<td>역전승</td>
+<td>쾌감 → "이 기분 때문에..."</td>
+<td>SIMULATED THOUGHT</td>
+</tr>
+<tr>
+<td>게임 후 복기</td>
+<td>자기고문적: "그 순간 왜 그걸 상대했지"</td>
+<td>SIMULATED THOUGHT</td>
+</tr>
+<tr>
+<td>새벽 2시 1판 더</td>
+<td>후회 예감 ↔ 흥분 교차</td>
+<td>SIMULATED EMOTION</td>
+</tr>
+<tr>
+<td>승급 실패 후 주말</td>
+<td>포기("이번 시즌 버려") 특별하면 재도전</td>
+<td>REFLECTION</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>E. Memory Timeline — 기억의 누적</h2>
+<ul>
+<li><strong>승급 성공 기억</strong>: 미드 다리우스로 역전 — 이후 "물리전(직전 파밍) vs 감각" 신념 생성 (MEMORY → CAUSAL INFERENCE)</li>
+<li><strong>연패 기억</strong>: "연패 시즌이 계속되면 무너진다" → 복기 멈춤 조건 자체가 악화 (MEMORY)</li>
+<li><strong>챌린저 스트리머와 비교</strong>: 티어 낮은 내가 왜 이걸 보는가 → 자괴감 0.6 (SIMULATED EMOTION)</li>
+<li>기억 재활성화 시점: 새 시즌 시작, 패치 초기, 친구가 "어떻게 하지" 물어볼 때 (MEMORY)</li>
+</ul>
+<hr />
+<h2>F. Adaptation Map — 스스로 만든 해결책</h2>
+<table>
+<thead>
+<tr>
+<th>개인 도구</th>
+<th>방식</th>
+<th>태그</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스크린샷 복기 노트</td>
+<td>패배 직후 스크린샷+1문장 메모</td>
+<td>SIMULATED EXPERIENCE</td>
+</tr>
+<tr>
+<td>챔피언풀 엑셀</td>
+<td>6개 챔피언별 강점·상성 표 — 갱신 빈도 낮음</td>
+<td>SIMULATED EXPERIENCE</td>
+</tr>
+<tr>
+<td>'전적 사이트 즐겨찾기'</td>
+<td>OP.GG·meta 등 3개 즐겨찾기 폴더 — 전환 반복</td>
+<td>SIMULATED EXPERIENCE</td>
+</tr>
+<tr>
+<td>자체 규칙 "연패 3회 중단"</td>
+<td>시행 실패율 높음(밤샘으로 이어짐)</td>
+<td>SIMULATED EXPERIENCE</td>
+</tr>
+<tr>
+<td>듀오 약속 캘린더</td>
+<td>친구와 토요일 고정 — <strong>긍정 루프의 축</strong></td>
+<td>SIMULATED EXPERIENCE</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>G. Reflection Timeline — 회고가 발생한 순간</h2>
+<table>
+<thead>
+<tr>
+<th>발생점</th>
+<th>R 단계</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>새벽 3시 마지막 판 후</td>
+<td>R4~R6</td>
+<td>"요즘 계속 연패하면 화가 나. 왜? → 지는 것보다 통제 불능한 느낌이 싫은 것 같다" (<strong>깊은 추상화</strong>)</td>
+</tr>
+<tr>
+<td>승급 성공 후 목욕</td>
+<td>R5~R8</td>
+<td>"내 판단이 맞다는 게 제일 중요" → 다음 티어 목표 설정</td>
+</tr>
+<tr>
+<td>패치 초기</td>
+<td>R1~R3</td>
+<td>"메타 따라가니까 지쳤어" → 일단 내 챔피언 확인</td>
+</tr>
+<tr>
+<td>시즌 종료</td>
+<td>R6~R8</td>
+<td>"올해는 복기보다 게임 수가 문제였지" — 원인 다른 쪽으로 외부화 Start</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>H. Abstraction / Generalization — (부정확한) 패턴</h2>
+<ul>
+<li>"메타를 따라가면 이긴다" → 실제로는 소스마다 상이해 혼란만 증가 (CAUSAL INFERENCE)</li>
+<li>"많이 확인할수록 정확해진다" → 복기 루프가 게임 시간을 잠식 (스펙 §36 '계속 검색')</li>
+<li>"나는 게임에 감각이 없다" → 초보(외부 귀인) vs 숙련(부분 내부 귀인)의 대비</li>
+</ul>
+<hr />
+<h2>I. Turning Points</h2>
+<ul>
+<li><strong>TP-L-1</strong>: 연패 후 복기 멈춤 2주 → 폼 회복. "복기의 존재 자체가 스트레스" 자각. (REFLECTION)</li>
+<li><strong>TP-L-2</strong>: 듀오 크루(토요일)에서 처음 이겨 "즐기면서 하니 잘되네" 경험 → 과열 조절 가능성 등장. </li>
+<li><strong>TP-L-3</strong>: 새 시즌 초 "이번엔 3판 규칙" 선언 실패 → 사후 해석 "나만의 규칙은 오래 못 간다".</li>
+</ul>
+<p>최대 전환점: <strong>TP-L-1</strong> — 복기 루프의 자기 정당성을 깨는 순간. 여기에 Quiet Move 배치. (CAUSAL INFERENCE)</p>
+<hr />
+<h2>J. Friction Map — 비용 지도</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>행동</th>
+<th>시간</th>
+<th>감정</th>
+<th>인지</th>
+<th>사회</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J-L-1</td>
+<td>게임 후 복기 멀티 검색</td>
+<td>2~3시간/주</td>
+<td>0.7</td>
+<td><strong>높음</strong></td>
+<td>—</td>
+<td>★ 사이트 전환 반복 — 스펙 §36 '계속 검색·비교'</td>
+</tr>
+<tr>
+<td>J-L-2</td>
+<td>연패 감정 처리 지연</td>
+<td>—</td>
+<td>0.8</td>
+<td>높음</td>
+<td>—</td>
+<td>분노 가라앉지 않고 다음 판으로 이월</td>
+</tr>
+<tr>
+<td>J-L-3</td>
+<td>빌드·메타 최신화 부담</td>
+<td>4~6회/주</td>
+<td>0.5</td>
+<td>높음</td>
+<td>—</td>
+<td>패치 초기에 극대화</td>
+</tr>
+<tr>
+<td>J-L-4</td>
+<td>밤샘 후 다음날</td>
+<td>—</td>
+<td>0.6</td>
+<td>높음</td>
+<td>0.4</td>
+<td>일상 침범</td>
+</tr>
+<tr>
+<td>J-L-5</td>
+<td>티어 비교 강박</td>
+<td>—</td>
+<td>0.6</td>
+<td>중간</td>
+<td>0.5</td>
+<td>크루·게시판 비교</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>K. Quiet Move Candidates</h2>
+<h3>KQ-L-1: "패배 1문장 노트" (게임 직후 30초)</h3>
+<p>기존: 승패 확정 → 전적 사이트·리플레이·유튜브 순회(1~3시간/주).
+변경: 게임 직후 <strong>"오늘 진 이유 중 내가 통제한 것 1개"</strong> 만 30초 노트. 복기 사이트는 그 후 1곳만.
+- 제거: 복기 멀티 전환 2곳+ / 추가: 30초 1문장. (QUIET MOVE)
+- 원리: 통제 가능성에 대한 답은 이미 플레이어 머릿속에 있다(깊은 추상화가 가능한 사람). 자료 대신 <strong>판단 기준점</strong>을 만들 뿐.</p>
+<h3>KQ-L-2: "연패 냉각 타이머" (2연패 후 30분 이탈)</h3>
+<p>기존: 연패 → 감정 이월 → 추가 판.
+변경: 2연패 시 <strong>무조건 30분 이탈</strong>(물·산책·눈 휴식) → 이탈이 tilt 방지. 시작 조건 변경. (QUIET MOVE)</p>
+<h3>KQ-L-3: "듀오 크루 시간 확대" (긍정 루프 강화)</h3>
+<p>기존: 혼자 솔랭다수 + 크루 1일.
+변경: 크루 시간을 주 1회→2회, '즐거운 회고' 축으로 재배치(즐기는 사람이 잘한다 신념과 연결). (QUIET MOVE)</p>
+<hr />
+<h2>L. Minimal Product</h2>
+<p><strong>KQ-L-1(1문장 노트) 구현</strong> — 기존 도구 재사용.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>형태</td>
+<td><strong>복기용 '1문장 카드' + 기존 전적 앱의 '게임 후 리뷰' 칸의 1줄 필드</strong></td>
+</tr>
+<tr>
+<td>동작</td>
+<td>게임 끝 → 30초 문장 1개 → (선택) 전적 사이트 1곳</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>0원. 전적 앱의 기존 UI 재사용</td>
+</tr>
+<tr>
+<td>측정</td>
+<td>주간 복기 시간, 연패 후 재게임 간격, 밤샘 횟수</td>
+</tr>
+<tr>
+<td>확장</td>
+<td>(2단계) 승·패 모두 1문장 → 월간 '통제 가능 요인' 리스트 자동 수집</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>PRODUCT HYPOTHESIS: 강한 게임 플레이어는 복기 자료가 아니라 <strong>자기 판단의 기준점</strong>을 원한다.
+'1문장'은 결과 해석 주기를 경험에서 자기 인지로 옮긴다. (스펙 §33 — 인지 과정에 Quiet Move)</p>
+</blockquote>
+<hr />
+<h2>M. Counterfactual — 개입 전후 (P-L1, 2주 시뮬레이션)</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>Baseline</th>
+<th>Intervention(KQ-L-1+L-2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>복기 시간</td>
+<td>주 2~3시간</td>
+<td>주 30분</td>
+</tr>
+<tr>
+<td>연패 후 행동</td>
+<td>1~2판 더</td>
+<td>30분 이탈 → 명확</td>
+</tr>
+<tr>
+<td>감정 파동</td>
+<td>0.8</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>게임 수</td>
+<td>16~20판</td>
+<td>14~16판(같은 실력 유지 가능성)</td>
+</tr>
+<tr>
+<td>밤샘</td>
+<td>1회</td>
+<td>1회(개선 50% 기대)</td>
+</tr>
+<tr>
+<td>메타 검색</td>
+<td>4~6회</td>
+<td>2회</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quietness Score</strong>: 행동변화 4 · 효과 4 · 반복 5 · 적응비용 5 · 호환성 4 · 감정감소 4 · 시간감소 4 · 인지감소 4 · 경제가치 2 · 확장성 4 → <strong>총 40/50</strong></p>
+<blockquote>
+<p>결론: LOL의 핵심 마찰은 게임이 아니라 <strong>게임 후의 해석 루프</strong>다.
+복기를 '여러 사이트 정독'에서 '1문장 자기 판단'으로 옮기는 것이 가장 작고 큰 변화다. (QUIET MOVE)</p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="01_pokemon_card.html"><span class="cap">‹ v2</span> Domain 01 — 포켓몬 카드 (수집 · 투자 · 개봉)</a><a class="next" href="03_fishing.html"><span class="cap">다음 ›</span> Domain 03 — 낚시 (현장 활동 · 출조 준비)</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

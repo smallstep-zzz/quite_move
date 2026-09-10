@@ -2,7 +2,9 @@
 function filterDocs(q) {
   q = q.toLowerCase();
   document.querySelectorAll('#doc-nav a').forEach(a => {
-    a.style.display = a.textContent.toLowerCase().includes(q) ? '' : 'none';
+    const match = a.textContent.toLowerCase().includes(q);
+    a.style.display = match ? '' : 'none';
+    if (/^sec/.test(a.className)) return;
   });
 }
 window.filterDocs = filterDocs;
