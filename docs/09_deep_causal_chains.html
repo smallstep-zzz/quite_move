@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I · I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색 — Quiet Move Simulator</title>
+<meta name="description" content="I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="active" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 I · Deep Causal Chains</div>
+      <h1>I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</h1>
+      <div class="meta">출력 I (Deep Causal Chains) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="09_deep_causal_chains.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</h1>
+<blockquote>
+<p>출력 I | 현재 원인뿐 아니라 과거 기억까지 되돌아가는(REVISIT) 깊이 탐색(스펙 §25~26).
+각 체인은 <code>사건 → 감정 → 해석 → 판단 → 행동</code> 순으로 하고, '왜'가 막히는 지점에서 과거로 되돌아간다.</p>
+</blockquote>
+<hr />
+<h2>I-1. P07·P01 — "아침마다 가방을 여는 행동"의 완전한 인과 사슬</h2>
+<pre><code>[행동] 엄마가 아침 06:50에 아이 가방을 연다
+  └왜? → &quot;체크 안 하면 사고가 난다고 믿는다&quot;
+      └왜? → 작년 겨울 개학 첫날 준비물 누락으로 학교 연락을 받은 경험(기억 잔류 0.6)
+          └왜? → 그날 아이가 당황해서 전화에서 음성이 작아졌다(감정 기억: 당황/미안)
+              └왜? → 엄마는 '내가 대신 확인하는 것 = 엄마 역할'이라고 해석
+                  └왜? → 남편이 늦게 들어오는 시간(에너지 부족) → 유일하게 내가 통제하는 영역
+                      └REVISIT → 결혼 전 자기효능감(전속 마케터) vs 현재 재택 프리랜스의 '내 것' 부족
+                            └중간결론: 아침 가방은 '준비물'이 아니라 엄마의 self-worth 재확인 기구
+</code></pre>
+<p><strong>관측 결론</strong>: 가방 확인 행동의 근원은 '아이 걱정'과 '내 역할'이 겹친 지점. → 개입은 "걱정을 덜어주는 것"(사진) 뿐 아니라 <strong>'내 것' 감각을 복원하는 것</strong>과도 연결된다(자기 계정).</p>
+<hr />
+<h2>I-2. P08·P03 — "폰 압수 직후 아이가 화장실로 사라지는 행동"</h2>
+<pre><code>[행동] 아이가 23:15에 화장실에서 25분
+  └왜? → 폰이 없는 시간을 견디는 유일한 회피(은닉) 공간
+      └왜? → '폰 반납 = 아무것도 할 것 없음' → 허기
+          └왜? → 저녁 식탁 대화가 단절돼 있어 '연결감' 수단이 폰뿐
+              └왜? → 엄마 질문 패턴(&quot;점수 어때&quot;)이 대화를 3초로 종료
+                  └왜? → 엄마는 '말로 다듬으면 싸운다'는 기억(작년 폰 압수 충돌) 보유
+                      └REVISIT → 엄마의 자신감 부족(Loss: 자기와 남편 갈등 경험의 투사)
+                          └중간결론: 폰은 표면적 문제. 핵심은 '대화 프로토콜' 부재
+</code></pre>
+<p><strong>관측 결론</strong>: 화장실 은닉은 "나쁜 아이"가 아니라 <strong>부재하는 대화 채널의 대체재</strong>. → 개입은 "은닉 추적"이 아니라 "환영받는 대화 채널"(공동 데이터·공동 취미) 만들기.</p>
+<hr />
+<h2>I-3. P05 — "오늘 몇 시간 공부했어"에 '5시간이라 말하는 행동'(거짓 보고)</h2>
+<pre><code>[행동] 아이가 실제 2.5시간을 '5시간'이라 보고
+  └왜? → 숫자를 채워야 대화가 끝난다(과거 경험: 적게 말하면 질문 5분 지속)
+      └왜? → 엄마는 숫자에만 반응(수치로 평가 신념)
+          └왜? → 입시 문화의 표준 언어가 숫자(백분위·시간)이기 때문(World State: 모평 성적지, 학원 리포트)
+              └왜? → 한국 입시 시스템이 '수치 비교'를 기본 정보 구조로 제공
+                  └REVISIT → 고3은 이 숫자 언어를 내면화하며 자존감을 숫자에 앵커링
+                      └중간결론: 거짓 보고는 '변칙'이 아니라 시스템의 기본 대화 프로토콜에 대한 적응
+</code></pre>
+<hr />
+<h2>I-4. P11 — "면접 탈락 후 24시간 이내 지원서를 다시 쓰지 못함"</h2>
+<pre><code>[행동] 탈락 후 지원 목록만 재작성(실행 미루기)
+  └왜? → '이번엔 다를 것' 기대가 무너짐 → 자기평가 -0.9
+      └왜? → 면접 탈락을 '환경'이 아니라 '내부 원인'(레퍼토리 없음)으로 귀인
+          └왜? → 취준생 문화·주변 비교가 '실패=내 책임' 프레임 제공(링크드인 성공담, 유튜브 '합격 후기')
+              └왜? → 통계적 사실(경력직 선호, 수시채용, 공급과잉 — World State)이 해석에 미포함
+                  └REVISIT → 첫 실패(전공 불일치 서류 탈락)부터 내부 귀인 습관 형성
+                      └중간결론: 실행 회피는 '미루기'가 아니라 '자기보호 학습' — 환경 프레임 개입 필요
+</code></pre>
+<hr />
+<h2>I-5. P13/P15 — "퇴근 후 소파에서 1시간 30분 폰을 보는 행동"</h2>
+<pre><code>[행동] 퇴근 후 가방 내려놓고 즉시 소파에 앉아 폰
+  └왜? → '해방'을 느끼기 위한 최소 동작 (2분 내 폰 = 일 안함 선언)
+      └왜? → 하루 종일 자기 목소리를 못 낸 에너지 손실의 보상
+          └왜? → 화상회의·메신저에서 &quot;듣기/응하기&quot; 모드만 유지
+              └왜? → 업무 요청→판단→전달→재확인 구조에서 '내 순서'가 없음(스펙 §9)
+                  └REVISIT → 졸업 후 첫 직장 시절 '일을 다 해야 쉰다'의 내면화
+                      └중간결론: 소파 폰은 휴식의 시작이 아니라 '무의지 상태로의 전이' — 전환 의식 부재
+</code></pre>
+<hr />
+<h2>I-6. 공통의 깊은 원인 3가지 (메타 관찰)</h2>
+<ol>
+<li><strong>모든 체인은 결국 '대화 프로토콜' 또는 '평가의 프레임'에서 분기</strong> — 도구(폰, 가방, 정보)는 모두 그 아래.</li>
+<li><strong>REVISIT 지점은 항상 '자기 가치의 원천'</strong> — 엄마(역할), 고3(숫자), 취준생(스펙), 직장인(성과). 여기에 직접 건드리면 저항이 크고, <strong>한 발 떨어져 매개변수를 바꾸면</strong> 저항이 작았다(가구 A,B,C가 실증).</li>
+<li><strong>거짓 보고·회피·멍은 모두 '숨김 행동'</strong>이 아니라 <strong>'운영 중인 대화 프로토콜에 대한 최적 대응'</strong>. → 프로토콜을 바꾸지 않는 한 반복된다.</li>
+</ol></article>
+    <div class="pager"><a class="prev" href="08_interaction_loops.html"><span class="cap">‹ 이전</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a><a class="next" href="10_branch_map.html"><span class="cap">다음 ›</span> J. Branch Map — 인과 분기 지도</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

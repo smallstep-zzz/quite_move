@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F · F. Memory Accumulation — 기억·감정의 누적과 재활성화 — Quiet Move Simulator</title>
+<meta name="description" content="F. Memory Accumulation — 기억·감정의 누적과 재활성화">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="active" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 F · Memory Accumulation</div>
+      <h1>F. Memory Accumulation — 기억·감정의 누적과 재활성화</h1>
+      <div class="meta">출력 F (Memory Accumulation) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="06_memory_accumulation.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>F. Memory Accumulation — 기억·감정의 누적과 재활성화</h1>
+<blockquote>
+<p>출력 F | 과거 사건이 현재 해석과 판단을 바꾸는 방식을 <code>mental_memory</code>로 관리(스펙 §13~14).
+형식: event / emotion / intensity / belief_update / residue, 그리고 시뮬레이션 중 관측된 <strong>재활성화 사건(activation)</strong>.</p>
+</blockquote>
+<hr />
+<h2>F-1. P07 김서연 — "준비물 사고" 기억이 확인 습관을 만든 과정</h2>
+<pre><code class="language-yaml">mental_memory:
+  - event: &quot;작년 겨울, 이준 준비물 누락으로 개학 첫날 학교에서 연락&quot;
+    emotion: 당황
+    intensity: 0.9
+    belief_update: &quot;확인해야 내가 버틸 수 있다(체크=안전)&quot;
+    residue: 0.6
+</code></pre>
+<p><strong>재활성화 체인 (observed)</strong></p>
+<pre><code>Day1  학급톡 공지 → 체육복 복기 → &quot;작년 개학 사고&quot; 기억 활성화(잔류 0.6 승압)
+   → 마찰행동: 아침 사전확인 + 사후 재확인 2회 → 감정(자책) 누적
+Day2~3  매일 같은 트리거(아침 가방, 단톡 알림) → 같은 루프 재실행
+Day4  아이 사진 업로드 → '체크로 해결됨' 새 기억 생성(강도 0.6, 잔류 0.4)
+   → 기존 belief의 경쟁 가설 등장: &quot;아이가 확인하면 안심할 수 있다&quot;
+</code></pre>
+<p><strong>해석</strong>: 기억은 단순 저장이 아니라 <strong>현재 맥락과 유사하면 자동 활성화</strong>되는 스크립트. 엄마의 확인은 "불안 해소"가 아니라 "불안 회피 스크립트 실행"이었다.</p>
+<hr />
+<h2>F-2. P08 박지혜 — "폰 압수 사건"이 자녀 대화의 해석 틀을 만든 과정</h2>
+<pre><code class="language-yaml">mental_memory:
+  - event: &quot;작년 여름, 폰 압수 → 아들이 방문 두드리며 반발 → 이웃 민원&quot;
+    emotion: 충격/분노
+    intensity: 0.9
+    belief_update: &quot;폰은 폭발의 근원. 다루면 갈등&quot;
+    residue: 0.7
+  - event: &quot;중3 내신이 남았는데 현재 성적이 중위권&quot;
+    emotion: 조바심
+    intensity: 0.8
+    belief_update: &quot;지금 안 하면 늦는다(서두름=사랑)&quot;
+    residue: 0.5
+</code></pre>
+<p><strong>재활성화 체인 (observed)</strong></p>
+<pre><code>Day1 &quot;수행평가 점수?&quot; → '폰=갈등' 기억 활성화 → 질문을 줄임(여전히 불안)
+Day2 학원비 결정 단독 처리 → '서두름=사랑' 신념 → 아들 방문 닫음
+Day3 야구 직관 → &quot;미리 말해&quot; 지적 → 기존 '통제' 스크립트 실행
+Day5 스크린타임 공동 리뷰 → &quot;공백(모름)이 불안의 원인&quot;이라는 새 기억 생성(강도 0.6)
+   → 폰 압수 기억이 '감시 도구'에서 '대화 도구'로 재맥락화
+</code></pre>
+<hr />
+<h2>F-3. P05 김우진 — "숫자로 평가받던 경험"의 누적</h2>
+<pre><code class="language-yaml">mental_memory:
+  - event: &quot;9월 모평 당일 국어 난조 → 엄마 옆에서 학원 상담&quot;
+    emotion: 수치
+    intensity: 0.8
+    belief_update: &quot;내 가치는 점수로 측정된다&quot;
+    residue: 0.5
+  - event: &quot;반복되는 '몇 시간 공부했어' 질문&quot;
+    emotion: 죄책감
+    intensity: 0.5
+    belief_update: &quot;숫자를 보고해야 함 → 보고를 피로워함&quot;
+    residue: 0.6
+</code></pre>
+<p><strong>재활성화 체인 (observed)</strong></p>
+<pre><code>Day1 엄마 &quot;국어 3점 틀린 거 봤니?&quot; → '점수=가치' 기억 활성화 → &quot;응&quot;(거짓) → 회피
+Day2 수학 71하락 → '숫자로 평가' 재활성화 → 상담 예약 OK
+Day3 &quot;오늘 몇 시간?&quot; → '보고=부끄러움' → 5시간이라 말함(실제 2.5)
+Day4 정시 선언 → 최초로 '내가 정한다' 기억 생성 → 이후 정보 수용력 상승
+</code></pre>
+<hr />
+<h2>F-4. P11 박소연 — "탈락 경험의 잔류 누적" (취준)</h2>
+<pre><code class="language-yaml">mental_memory:
+  - event: &quot;서류 탈락 23회 누적&quot;
+    emotion: 무기력
+    intensity: 0.6 (누적 가중)
+    belief_update: &quot;나는 스펙이 부족하다&quot;
+    residue: 0.5
+  - event: &quot;이번 면접 탈락(Day6)&quot;
+    emotion: 충격(0.8) + 자책
+    belief_update: &quot;면접 레퍼토리가 없다(자기평가 -0.9)&quot;
+    residue: 0.7
+</code></pre>
+<p><strong>재활성화 체인 (observed)</strong></p>
+<pre><code>Day2 자소서 '실패 경험' 문단 → '나는 부족' 기억 활성화 → 4번 재작성(과잉 수정)
+Day5 면접 2문항 꼬임 → '레퍼토리 없음' 갱신 → 탈락 확정 시 몰락감
+Day7 &quot;월요일 2곳 지원&quot; → 탈락 잔류(0.7)가 다음 지원서의 자신감을 낮출 것으로 관측됨
+</code></pre>
+<p><strong>관찰</strong>: 탈락의 잔류는 <code>결과 정보</code>가 아니라 <strong><code>자기평가 정보</code></strong>로 저장된다. 1건의 탈락이 23건의 이전 탈락 기억을 승압시키는 현상 — <strong>실패의 가중 평균</strong>이 아니라 <strong>최신 실패의 가중치</strong>가 지배한다.</p>
+<hr />
+<h2>F-5. P13/P15 이하린 — "퇴근 후 무기력" 기억의 일주일 주기</h2>
+<pre><code class="language-yaml">mental_memory:
+  - event: &quot;야간 메신저 대응(수요일 밤)&quot;
+    emotion: 긴장
+    intensity: 0.7
+    belief_update: &quot;퇴근 후에도 대기해야 안심&quot;
+    residue: 0.6
+  - event: &quot;금요일 친구 모임에서 회복&quot;
+    emotion: 안정
+    intensity: 0.6
+    belief_update: &quot;사람 만나면 회복된다&quot;
+    residue: 0.4
+</code></pre>
+<p><strong>재활성화 체인 (observed)</strong></p>
+<pre><code>Day1~3 야간/퇴근 트리거 → '퇴근 후에도 대기' 기억 반복 활성화 → 폰 멍
+Day5 친구 모임 → '사람=회복' 기억 활성화 → 금요일 밤 회복 → 주말 기분 고정
+Day7 '내일 첫 일 카드' → '퇴근 후 대기' 기억을 '계획된 다음 행동' 기억으로 대체(부분)
+</code></pre>
+<hr />
+<h2>F-6. 누적 효과 계산 모델(관측 규칙 정리)</h2>
+<p>스펙 §14의 요소를 실제 잔류 값으로 역추정한 결과:</p>
+<table>
+<thead>
+<tr>
+<th>저장 요소</th>
+<th>관측 규칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사건 중요도</td>
+<td>강한 1회(폰 압수, 면접 탈락)는 잔류 0.7~0.8로 고정</td>
+</tr>
+<tr>
+<td>반복 횟수</td>
+<td>미세한 반복(준비물 누락, 야간 대기)은 <code>intensity × 반복로그</code>로 누적</td>
+</tr>
+<tr>
+<td>최근성</td>
+<td>3일 이내 사건이 해석 틀을 지배(탈락 1건이 23건을 승압)</td>
+</tr>
+<tr>
+<td>현재 상황 유사성</td>
+<td>아침 가방=작년 겨울, 폰=작년 압수 → 상황 유사 시 자동 활성화</td>
+</tr>
+<tr>
+<td>해결 여부</td>
+<td>"해결됨"으로 저장된 사건은 잔류 하락(가구 A의 사진 루틴)</td>
+</tr>
+<tr>
+<td>반대극 사건</td>
+<td>강한 긍정(친구 모임)은 부정 기억 잔류를 직접 낮춤(선택적 재맥락화)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>중요 관점</strong>: 잔류 감소는 "시간 경과"보다 <strong>"해석 변경(재맥락화)"</strong>에서 온다.
+→ 이 점이 이후 Quiet Move 설계의 핵심 원리가 된다(기억을 지우려 하지 않고 <strong>해석을 바꾸는</strong> 개입).</p></article>
+    <div class="pager"><a class="prev" href="05_mental_state_timeline.html"><span class="cap">‹ 이전</span> E. Mental State Timeline — 시간순 감정·기분·생각</a><a class="next" href="07_turning_points.html"><span class="cap">다음 ›</span> G. Turning Points — 전환점 기록</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

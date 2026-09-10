@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N · N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention) — Quiet Move Simulator</title>
+<meta name="description" content="N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="active" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 N · Counterfactual Results</div>
+      <h1>N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</h1>
+      <div class="meta">출력 N (Counterfactual Results) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="14_counterfactual_results.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</h1>
+<blockquote>
+<p>출력 N | Quiet Move가 없는 세계(Baseline)와 있는 세계(Intervention)를 같은 페르소나로 비교(스펙 §31).
+비교 축: 행동 단계 / 시간 / 반복 횟수 / 확인 횟수 / 앱 전환 / 기억 부담 / 감정 소모 / 불안 / 갈등 / 실수 가능성 / 비용 / 피로 / 타인 추가 작업.</p>
+</blockquote>
+<hr />
+<h2>N-1. QM-01 (준비물 사진) — P07·P01</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>Baseline</th>
+<th>Intervention</th>
+<th>변화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>행동 단계</td>
+<td>엄마 확인(아침)+재확인(저녁)+전달(누락 시)</td>
+<td>아이 체크(밤)+사진 1장+엄마 2초</td>
+<td>단계 3→2</td>
+</tr>
+<tr>
+<td>시간</td>
+<td>주 60분(확인+)</td>
+<td>주 25분(아이 체크 포함)</td>
+<td><strong>-58%</strong></td>
+</tr>
+<tr>
+<td>반복/확인 횟수</td>
+<td>주 14회(재확인 7회)</td>
+<td>주 7회(사실상 1회)</td>
+<td>-50%</td>
+</tr>
+<tr>
+<td>앱 전환</td>
+<td>학급톡→학원앱→메모 3종</td>
+<td>가족톡 1종</td>
+<td>-2종</td>
+</tr>
+<tr>
+<td>기억 부담</td>
+<td>엄마 머릿속 체크리스트</td>
+<td>사진 1장</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>감정 소모(E)</td>
+<td>0.6~0.7</td>
+<td>0.3</td>
+<td><strong>-50%</strong></td>
+</tr>
+<tr>
+<td>불안</td>
+<td>아침마다 재확인(확인 없이 1주 불가)</td>
+<td>2초 확인 후 종료</td>
+<td>해소</td>
+</tr>
+<tr>
+<td>갈등</td>
+<td>(무)</td>
+<td>(무)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>실수 가능성</td>
+<td>주 0.5건(누락)</td>
+<td>주 0건</td>
+<td><strong>0건</strong></td>
+</tr>
+<tr>
+<td>비용</td>
+<td>0원</td>
+<td>0원</td>
+<td>—</td>
+</tr>
+<tr>
+<td>피로</td>
+<td>엄마 피로+자책</td>
+<td>낮음</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>타인 추가 작업</td>
+<td>남편·학교 전달 1회/주</td>
+<td>없음</td>
+<td>감소</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정</strong>: 전 축에서 Baseline 우위. 특히 <strong>시간(-58%)과 감정(-50%)이 동시에</strong> 개선 — Trade-off 없음.</p>
+<hr />
+<h2>N-2. QM-02 (주간 스크린 리뷰) — P08·P03</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>Baseline</th>
+<th>Intervention</th>
+<th>변화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>행동 단계</td>
+<td>은닉→확인→충돌→압수→재은닉</td>
+<td>데이터 열람→규칙 협상→실행</td>
+<td>단계 수 유사(질적 전환)</td>
+</tr>
+<tr>
+<td>시간</td>
+<td>감시 확인 주 90분</td>
+<td>리뷰 주 15분</td>
+<td>-83%(감시 시간)</td>
+</tr>
+<tr>
+<td>반복/확인 횟수</td>
+<td>화장실·방문 확인 일 3회</td>
+<td>주 1회</td>
+<td>크게 감소</td>
+</tr>
+<tr>
+<td>감정 소모(E)</td>
+<td>0.8(아들 분노 0.9 포함)</td>
+<td>0.5</td>
+<td><strong>-37%</strong></td>
+</tr>
+<tr>
+<td>불안/갈등</td>
+<td>진폭 상승(폭발 1건)</td>
+<td>진폭 하락(폭발 0건)</td>
+<td>갈등 4→2</td>
+</tr>
+<tr>
+<td>실수 가능성</td>
+<td>은닉 고도화(부정행위화)</td>
+<td>감시 대상 소멸</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>감정+시간 합성</td>
+<td>15분</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>피로</td>
+<td>양측 피로 누적</td>
+<td>낮음</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>타인 추가 작업</td>
+<td>이웃 소음 민원 위험</td>
+<td>없음</td>
+<td>감소</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정</strong>: Baseline의 감시는 <strong>시간 비용은 작지만 감정·사회적 비용이 지배적</strong>. Intervention은 작은 시간(15분)으로 감정 축 반전.</p>
+<hr />
+<h2>N-3. QM-03 (정보 2채널·토요일 회의) — P09·P05</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>Baseline</th>
+<th>Intervention</th>
+<th>변화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>행동 단계</td>
+<td>순회(3채널)→스크랩→질문</td>
+<td>수집(2채널)+메모→주1회 회의</td>
+<td>단계 3→2</td>
+</tr>
+<tr>
+<td>시간</td>
+<td>주 315분(45분/일)</td>
+<td>주 ~105분(15분×5+회의60)</td>
+<td><strong>-67%</strong></td>
+</tr>
+<tr>
+<td>반복/확인 횟수</td>
+<td>정보 체크 45→15회/일</td>
+<td>6회/일</td>
+<td>-60%</td>
+</tr>
+<tr>
+<td>앱 전환</td>
+<td>3채널+앱 다수</td>
+<td>2채널</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>감정 소모(E)</td>
+<td>0.9(최대)</td>
+<td>0.5</td>
+<td><strong>-45%</strong></td>
+</tr>
+<tr>
+<td>불안</td>
+<td>정보 그만두면 불안(회피 소용)</td>
+<td>토요일에 알게 된다는 구조적 안심</td>
+<td>구조화</td>
+</tr>
+<tr>
+<td>갈등</td>
+<td>문진→회피→거짓 보고</td>
+<td>문진 폐지(경험 질문)</td>
+<td>해소</td>
+</tr>
+<tr>
+<td>실수 가능성</td>
+<td>정보 과잉으로 인한 잘못된 결정 위험</td>
+<td>신뢰 소스 제한(결정 질 향상 기대)</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>피로</td>
+<td>엄마 소진+아들 수치</td>
+<td>낮음</td>
+<td>감소</td>
+</tr>
+<tr>
+<td>타인 추가 작업</td>
+<td>학원·카페 문의 수시</td>
+<td>주 1회 정리</td>
+<td>감소</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정</strong>: 정보량은 줄었지만 <strong>결정 품질(2채널)과 가족 관계(온기)가 동시에 상승</strong>하는 가장 희귀한 개입.</p>
+<hr />
+<h2>N-4. QM-04 (1문장 질문 코드) — 가구 B·C 공용 (P03, P05, P02 등)</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>Baseline("몇 시간? 몇 점?")</th>
+<th>Intervention("오늘 힘들었던 거 하나만")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>응답 유형</td>
+<td>"몰라" / 거짓(5시간)</td>
+<td>3~5문장 경험 답변</td>
+</tr>
+<tr>
+<td>대화 지속</td>
+<td>3초~30초</td>
+<td>5~15분</td>
+</tr>
+<tr>
+<td>감정 소모</td>
+<td>부모 0.7 / 자녀 0.6</td>
+<td>부모 0.4 / 자녀 0.3</td>
+</tr>
+<tr>
+<td>거짓 보고</td>
+<td>주 2회 관측</td>
+<td>관측 0</td>
+</tr>
+<tr>
+<td>자녀의 다음 행동</td>
+<td>회피·은닉 지속</td>
+<td>다음날 화제 개방(P03 야구, P05 "엄마도 게임")</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>0원</td>
+<td>0원</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정</strong>: 동일 시간(식사), 동일 관심, <strong>질문 단어 1개</strong>만 바꿔 효과가 뒤집힌 사례.</p>
+<hr />
+<h2>N-5. QM-05 (탈락 카드 24시간) — P11</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>Baseline</th>
+<th>Intervention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>후 행동</td>
+<td>탈락 후 3일 지원 회피</td>
+<td>2~3일 내 다음 지원</td>
+</tr>
+<tr>
+<td>감정 소모(E)</td>
+<td>0.8(전체 자책)</td>
+<td>0.5(부분 귀인)</td>
+</tr>
+<tr>
+<td>자기평가</td>
+<td>-0.9 파동</td>
+<td>-0.4~-0.5 파동(제한)</td>
+</tr>
+<tr>
+<td>기억 저장 유형</td>
+<td>'자기평가 정보'(잔류 0.7)</td>
+<td>'사건 정보'(잔류 0.4)</td>
+</tr>
+<tr>
+<td>반복 기억 승압</td>
+<td>23건 탈락에 최신 승압</td>
+<td>구획화로 승압 제한</td>
+</tr>
+<tr>
+<td>지원 품질</td>
+<td>과잉 수정(버전 파편화)</td>
+<td>1판 원칙 유지</td>
+</tr>
+<tr>
+<td>피로</td>
+<td>심리 소진+알바 부담</td>
+<td>관리 가능</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정</strong>: 시간 비용(10분) 대비 <strong>자기평가 보호 효과</strong>가 큰 개입. 단, 3문장 카드 습관 형성에 2~3회 반복 필요(기대).</p>
+<hr />
+<h2>N-6. QM-06 (3-3-3+첫 일 카드) — P13/P15</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>Baseline</th>
+<th>Intervention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>행동 단계</td>
+<td>퇴근→소파 폰(무의지)</td>
+<td>퇴근→3-3-3 전환→카드 1줄</td>
+</tr>
+<tr>
+<td>시간</td>
+<td>폰 멍 90분 + 야식</td>
+<td>폰 멍 60분(일부 전환)</td>
+</tr>
+<tr>
+<td>감정 소모</td>
+<td>공허(0.7) + 야간 대기 긴장</td>
+<td>명료성 소량(0.4)</td>
+</tr>
+<tr>
+<td>취침</td>
+<td>00:40~01:15(지연)</td>
+<td>12시 전 2회/주(개선 시작)</td>
+</tr>
+<tr>
+<td>다음날 피로</td>
+<td>누적</td>
+<td>감소(관측 제한)</td>
+</tr>
+<tr>
+<td>사회적</td>
+<td>친구 연락 미룸(외로움)</td>
+<td>금요일 모임 유지(회복 축)</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>0원</td>
+<td>10분</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정</strong>: 절대적 개선량은 작으나 <strong>시작 조건의 소프트 재설정</strong> 성공. 장기(1개월) 시뮬레이션에서 취침 시간 정규화를 기대(가정).</p>
+<hr />
+<h2>N-99. Counterfactual 종합 판정</h2>
+<table>
+<thead>
+<tr>
+<th>QM</th>
+<th>시간</th>
+<th>감정</th>
+<th>갈등</th>
+<th>실수</th>
+<th>사회적</th>
+<th>총평</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QM-01</td>
+<td>★★★</td>
+<td>★★★</td>
+<td>—</td>
+<td>★★★</td>
+<td>★★</td>
+<td><strong>최고 cost-effectiveness</strong></td>
+</tr>
+<tr>
+<td>QM-02</td>
+<td>★★</td>
+<td>★★★</td>
+<td>★★★</td>
+<td>★★</td>
+<td>★★★</td>
+<td>감시 루프 해제</td>
+</tr>
+<tr>
+<td>QM-03</td>
+<td>★★★</td>
+<td>★★★</td>
+<td>★★</td>
+<td>★★</td>
+<td>★</td>
+<td>정보 과잉의 종결</td>
+</tr>
+<tr>
+<td>QM-04</td>
+<td>★</td>
+<td>★★★</td>
+<td>★★★</td>
+<td>★★</td>
+<td>★★</td>
+<td>0원 개입</td>
+</tr>
+<tr>
+<td>QM-05</td>
+<td>★★</td>
+<td>★★★</td>
+<td>★</td>
+<td>★★</td>
+<td>★★</td>
+<td>취준생 자기평가 보호</td>
+</tr>
+<tr>
+<td>QM-06</td>
+<td>★★</td>
+<td>★★</td>
+<td>★</td>
+<td>★★</td>
+<td>★★</td>
+<td>회복 루틴 씨앗</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>공통 패턴</strong>: 6개 QM 모두 Baseline의 <strong>감정 비용 축만 공격</strong>한다.
+시간 비용 줄이는 개입(자동화·앱)은 없고, <strong>'같은 시간 안에서 해석·주체·주기·조건을 옮기는'</strong> 개입만 있다.
+이것이 실패 확률을 낮추는 이유다 — 기존 행동을 전혀 없애지 않았기 때문.</p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="13_minimal_products.html"><span class="cap">‹ 이전</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a><a class="next" href="15_cross_persona_validation.html"><span class="cap">다음 ›</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

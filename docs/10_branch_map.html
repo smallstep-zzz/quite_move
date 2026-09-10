@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J · J. Branch Map — 인과 분기 지도 — Quiet Move Simulator</title>
+<meta name="description" content="J. Branch Map — 인과 분기 지도">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="active" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 J · Branch Map</div>
+      <h1>J. Branch Map — 인과 분기 지도</h1>
+      <div class="meta">출력 J (Branch Map) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="10_branch_map.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>J. Branch Map — 인과 분기 지도</h1>
+<blockquote>
+<p>출력 J | 하나의 행동에 여러 원인이 있을 때 분기/수렴을 기록하고, 각 경로의 설명력을 검증(스펙 §24).
+각 가지(Branch)에 <code>◎실측/○추론/△미검증</code> 표기를 달았다.</p>
+</blockquote>
+<hr />
+<h2>J-1. "아침마다 가방을 확인하는 엄마(P07)" — 5분지</h2>
+<pre><code>반복 확인(가방)
+├─ 불안 회피 스크립트        ◎실측(작년 개학 사고 기억 재활성화)
+├─ 자기 가치(역할)의 대체물  ○추론(재택 프리랜스 전환 후 유일한 통제 영역)
+├─ 정보가 분산되서          ◎실측(학급톡·학원앱·늘봄 등 3종 분산)
+├─ 아이와 남편의 기대 유지   ○추론(아빠 &quot;엄마가 잘 챙긴다&quot; 평판)
+└─ 습관(무의식 루틴)        ◎실측(매일 같은 시각, 같은 순서)
+</code></pre>
+<p><strong>수렴 검증</strong>: 가방 확인 빈도(주 14회)와 "사진 루틴 도입 후 빈도(9회)" — 확인량은 <code>불안 회피</code>+<code>정보 분산</code> 가지로 70% 설명. <code>자기 가치</code> 가지는 감정 비용(자책) 설명에 기여.</p>
+<hr />
+<h2>J-2. "수행평가 점수를 '몰라'로 답하는 아들(P03)" — 4분지</h2>
+<pre><code>&quot;몰라&quot;(대화 회피)
+├─ 점수 자체가 낮다(82 예측)     ◎실측(실제 87 — 예측 낮음)
+├─ 숫자를 말하면 잔소리           ◎실측(과거 경험 — 질문 5분 지속)
+├─ '무가치한 보고' 프레임        ○추론(자존감과 점수 분리 못함)
+└─ 대체 대화 채널 부재           ◎실측(야구 카톡은 활성)
+</code></pre>
+<p><strong>검증</strong>: "좋아졌잖아" 한마디 후 다음날 점수 공개(Day4) — <strong>반응 조건</strong>이 대화 개방을 결정. <code>숫자→잔소리</code> 가지의 설명력이 가장 높았음.</p>
+<hr />
+<h2>J-3. "9월 모평 수학 71점(하락)에 대한 엄마의 반응(P09)" — 3분지+중복</h2>
+<pre><code>교재 변경/강사 문의/상담
+├─ 정보 수집 습관의 연장        ◎실측(채널 3곳 순회가 일상)
+├─ '점수 하락=위기' 신념        ◎실측(작년 참사 기억 — 타인 가정)
+└─ 대안 의사결정 수단의 부재     △미검증(기대 — 상담은 아직 진행 전)
+</code></pre>
+<p><strong>수렴</strong>: 실제로 행한 행동(즉시 상담 예약)은 <code>정보 수집</code>+<code>위기 신념</code> 두 가지의 <strong>합교집합</strong>. → 개입은 이 수렴 지점을 <strong>시점 재배치</strong>(토요일)로 하여 가볍게 막음(TP-C1).</p>
+<hr />
+<h2>J-4. "지원서를 4번 다시 쓰는 P11" — 2층 분지</h2>
+<pre><code>과잉 수정
+├─ A층: 자기표현 불확실성
+│   ├─ '실패 경험' 문단에서 과거 사건성을 잃음      ◎실측
+│   ├─ 이력서 포맷 파편화(파일 3개)               ◎실측
+│   └─ 비교 프레임(합격 후기 탐색)               ○추론
+├─ B층: 미래 위험 회피(내용 확정=책임질 결과물)
+│   ├─ '결과가 나빠도 &quot;내가 썼다&quot;를 피하려는 무망감' ○추론
+│   └─ 탈락 잔류의 승압                        ◎실측(잔류 0.7)
+└─ C층: 도구 미준비(버전 관리 부재)              ◎실측
+</code></pre>
+<p><strong>검증</strong>: 버전 충돌(Day1)은 명백한 C층. 그러나 4번 재작성은 B층(책임 회피)이 지배하는 것으로 보임 — <strong>기계적 도구 지원</strong>만으론 안 풀리는 층이라는 예고.</p>
+<hr />
+<h2>J-5. "퇴근 후 소파 폰(P13/P15)" — 4분지</h2>
+<pre><code>소파 폰 90분
+├─ 해방 선언(일 안 함의 몸짓)     ◎실측(&quot;멍=다시 쉰다&quot; 진술)
+├─ 무의지 상태로의 전이           ◎실측(일하다 → 그냥 폰 순서 확인)
+├─ 외로움(1인 자취)의 자기위로    ○추론(배달·OTT 반복 — 대화 없음)
+└─ 야간 대기 때의 분노 재생       ○추론(전날 메신저 응답 회고)
+</code></pre>
+<p><strong>검증</strong>: 친구 모임(사람 관련 가지)이 회복을 이끈 것과 '월요일 첫 일 카드'가 도구 지원이 아니라 <strong>빈칸(내일)의 고정</strong>으로 작용한 것 — <code>무의지 상태</code> 가지가 핵심 결절로 확인됨.</p>
+<hr />
+<h2>J-6. 분기 구조의 메타 학습</h2>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>예</th>
+<th>대응 전략</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다원인 분기</td>
+<td>가방 확인(J-1)</td>
+<td>가지 분리 후 '지배 가지'만 조준</td>
+</tr>
+<tr>
+<td>수렴 분기</td>
+<td>수학 상담(J-3)</td>
+<td>수렴 지점의 '빈도' 제어</td>
+</tr>
+<tr>
+<td>다층 분지</td>
+<td>지원서(J-4)</td>
+<td>도구(C)→프레임(B) 순으로 개입</td>
+</tr>
+<tr>
+<td>상태 전이</td>
+<td>소파 폰(J-5)</td>
+<td>전이 지점의 '시작 조건' 통제</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>관찰: 대부분의 분기는 예상보다 깊지 않는다. 3~4가지 수준에서 실제 행동 설명이 수렴된다는 점이 시뮬레이션 상 유의미한 판단이다(스펙 §25 "더 이상 인과가 나오지 않으면 종료").</p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="09_deep_causal_chains.html"><span class="cap">‹ 이전</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a><a class="next" href="11_friction_map.html"><span class="cap">다음 ›</span> K. Friction Map — 행동·감정·사회적 비용 지도</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

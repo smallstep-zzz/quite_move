@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q · Q. Assumptions / Unknowns — 사실과 가정의 구분 — Quiet Move Simulator</title>
+<meta name="description" content="Q. Assumptions / Unknowns — 사실과 가정의 구분">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="active" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 Q · Assumptions / Unknowns</div>
+      <h1>Q. Assumptions / Unknowns — 사실과 가정의 구분</h1>
+      <div class="meta">출력 Q (Assumptions / Unknowns) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="17_assumptions_unknowns.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>Q. Assumptions / Unknowns — 사실과 가정의 구분</h1>
+<blockquote>
+<p>출력 Q | 사실 / 가정 / 시뮬레이션 결정 / 추론을 엄격히 구분하고, 한계를 명시(스펙 §33-25).
+이 시스템의 결과는 "실제 사용자 수요"로 오인해서는 안 된다.</p>
+</blockquote>
+<hr />
+<h2>Q-1. 사실 (웹 검색 기반, 세계의 조건)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>출처 계열</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초중고 학생 483.7만(500만 붕괴), 청년 인구 782.2만</td>
+<td>통계청·교육부</td>
+</tr>
+<tr>
+<td>AIDT가 '교육자료'로 격하, 도입률 급감 60%, 활용 8.1%</td>
+<td>감사원·국회 국감 보도</td>
+</tr>
+<tr>
+<td>늘봄→'온동네 초등돌봄·교육', 초3 방과후 바우처 50만</td>
+<td>교육부</td>
+</tr>
+<tr>
+<td>사교육 총액 27.5조(-5.7%), 참여율 75.7%, 참여학생 60.4만/월, 서울 66.3만</td>
+<td>교육부·통계청 사교육비조사</td>
+</tr>
+<tr>
+<td>청년 고용률 43.8%(25개월 연속 하락), 실업률 7.2%, 취업자 46개월 감소, 졸업 4년 5.7개월</td>
+<td>국가데이터처</td>
+</tr>
+<tr>
+<td>주52시간제 적용, 평균 출근 08:42/퇴근 18:19, 근무 9:52</td>
+<td>고용동향·시프티 데이터</td>
+</tr>
+<tr>
+<td>수도권 월세 100만 시대(서울 159만·경기 115만·인천 102만), 전세 서울 6.2억</td>
+<td>국토부·KB</td>
+</tr>
+<tr>
+<td>스마트폰 과의존 위험군 15.76%(중학생 최고), 메신저 이용률 초 86.4/중 99.3/고 99.8, 평일 수면 7.4h, 우울감 25.7%</td>
+<td>성평등가족부·청소년 통계</td>
+</tr>
+<tr>
+<td>2027수능 2026.11.19(목), 원서접수 8~9월, 성적통지 12.11</td>
+<td>한국교육과정평가원</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>위 목록은 모두 세계의 배경(조건)이다. <strong>"사람들의 불만·니즈"는 수집하지 않았다.</strong></p>
+</blockquote>
+<hr />
+<h2>Q-2. 가정 (시뮬레이션을 위해 설정한 조건)</h2>
+<table>
+<thead>
+<tr>
+<th>가정</th>
+<th>근거 계열</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주무대 분당을 '중산층 맞벌이/전업 엄마 혼재 신도시'로 단순화</td>
+<td>수도권 아파트·사교육 인프라 평균치</td>
+</tr>
+<tr>
+<td>P07은 재택 프리랜스, P08은 금융권, P09는 전업(정보집약형)으로 역할 분리</td>
+<td>사교육비·맞벌이 통계 분포 근사</td>
+</tr>
+<tr>
+<td>가구별 소득·자산 구체 수치는 모델 안에서만 결정(검증 불가)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>초등 가정의 '준비물·단톡' 문화를 표준 학교 운영 관행으로 전제</td>
+<td>공교육 일반 관행</td>
+</tr>
+<tr>
+<td>부모·자녀 모두 스마트폰 보유, OS 스크린타임 기능 사용 가능</td>
+<td>기기 보급 통계(과의존 15%대, 메신저 86%+)</td>
+</tr>
+<tr>
+<td>9월 모평 결과가 9월 중순 시점에 단계적으로 도달한다고 전제(개별 통지는 학교·학원 차이 존재)</td>
+<td>수능·모평 일정</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Q-3. 시뮬레이션 결정(시행한 선택) — 재현 가능성</h2>
+<ul>
+<li>7일 창(2026.9.14~20) 선정 — 수능 D-66의 입시 집중기 대표성.</li>
+<li>심층 트레이스 5스레드(가구 A/B/C + P11 + P13/P15), 표준 3경량 2로 깊이 배정.</li>
+<li>감정 강도(0~1)·잔류(residue)를 시뮬레이션 내에서 일관 스케일로 부여.</li>
+<li>전환점은 독립 Observer가 아니고 Trace 작성 중 탐지 — <strong>Observer의 독립성은 한계</strong>.</li>
+</ul>
+<h2>Q-4. 추론(관측에서 유도한 설명) — 가장 취약한 층</h2>
+<ul>
+<li>"감정 비용 곡선은 누가 홀로 해석하느냐에 반응한다"(E-9): 유의미하나 <strong>인과 증명 아님</strong>.</li>
+<li>"거짓 보고는 시스템의 대화 프로토콜에 대한 적응"(I-3): 가설.</li>
+<li>"감시→공유 전환이 루프를 해제한다"(H): 7일 사례이며, 반전 효과가 장기 유지될지는 미검증.</li>
+<li>"QM-05의 카드가 자기평가 잔류를 줄인다": 본 시뮬레이션 관측이 아니라 <strong>이식 예측</strong>.</li>
+</ul>
+<hr />
+<h2>Q-5. 알려진 한계(Unknowns)</h2>
+<table>
+<thead>
+<tr>
+<th>한계</th>
+<th>영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표본 15명 내(페이크 데이터 포함) → <strong>통계적 일반화 불가</strong></td>
+<td>결과는 '가능한 구조'의 발견이지 확률</td>
+</tr>
+<tr>
+<td>7일 창이라 '습관 고착'(스펙 §20의 한 달)을 재현 못 함</td>
+<td>Day7의 지속성 판정은 1개월 검증 필요</td>
+</tr>
+<tr>
+<td>부모 3명 모두 '여성' 역할로만 구성(스펙 상 제시된 성별 외 확장 부재)</td>
+<td>남성 양육·돌봄 행동 루프 미재현</td>
+</tr>
+<tr>
+<td>Observer가 시뮬레이션과 같은 자료에서 전환점을 뽑음</td>
+<td>주관성 혼입 위험</td>
+</tr>
+<tr>
+<td>감정 강도는 모델 내 상대 스케일 → 절대적 감정 척도 아님</td>
+<td>교차 비교 시 '비율' 해석 자제</td>
+</tr>
+<tr>
+<td>9월 한 주 날씨·일정 외 변동(비, 학교 행사, 몸살 등) 미포함</td>
+<td>변수 통제 목적의 단순화</td>
+</tr>
+<tr>
+<td>취준·직장인의 스레드는 일부 표준화 생략(심층 5개 외)</td>
+<td>일반화 제한</td>
+</tr>
+<tr>
+<td>한국 한정 세계 — 다른 문화권(일본·유럽 등) 이식은 세계조건 재수집 후 실행해야 함</td>
+<td>이식 오류 위험</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Q-6. 핵심 원칙 준수 성명 (스펙 §33 대조)</h2>
+<table>
+<thead>
+<tr>
+<th>원칙</th>
+<th>준수 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 사람에게 직접 "무엇이 필요한가" 묻지 않음</td>
+<td>✅ (모두 세계 조건에서 유도)</td>
+</tr>
+<tr>
+<td>2. 웹에서 Needs 수집 안 함</td>
+<td>✅ (검색 주제 = 제도·통계·시장·일정)</td>
+</tr>
+<tr>
+<td>3. 웹은 World State만</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>4~5. 페르소나 최소화·대표성</td>
+<td>✅ 15명</td>
+</tr>
+<tr>
+<td>19. Persona Simulator와 Observer 분리</td>
+<td>◐ (작업상 한 사람의 파이프라인이지만 <strong>기록 상 역할 분리</strong>)</td>
+</tr>
+<tr>
+<td>20. 제품 아이디어 시뮬레이션 주입 금지</td>
+<td>✅ (Quiet Move는 Trace 이후 Observer 산출)</td>
+</tr>
+<tr>
+<td>25. 결과를 실제 수요로 오인하지 않음</td>
+<td>✅ (본 문서 Q-5가 방어 장치)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Q-7. 결론(오용 방지문)</h2>
+<blockquote>
+<p>본 출력(A~Q)은 "어떤 제품을 만들어야 한다"는 주장이 아니라,
+<strong>"이 세계 조건 속에서 대표 페르소나를 살려 시뮬레이션했을 때, 어떤 행동 루프가 도는가"</strong>에 대한 해석이다.
+Quiet Move의 유효성은 반드시 <strong>실세계의 Counterfactual 실험(소규 파일럿)</strong>을 거쳐 검증되어야 하며,
+마케팅 근거나 수요량 추정에 직접 사용해서는 안 된다.</p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="16_cross_region_validation.html"><span class="cap">‹ 이전</span> P. Cross-Region Validation — 지역별 차이</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

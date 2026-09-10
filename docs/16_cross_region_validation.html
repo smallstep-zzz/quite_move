@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P · P. Cross-Region Validation — 지역별 차이 — Quiet Move Simulator</title>
+<meta name="description" content="P. Cross-Region Validation — 지역별 차이">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="active" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 P · Cross-Region Validation</div>
+      <h1>P. Cross-Region Validation — 지역별 차이</h1>
+      <div class="meta">출력 P (Cross-Region Validation) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="16_cross_region_validation.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>P. Cross-Region Validation — 지역별 차이</h1>
+<blockquote>
+<p>출력 P | 같은 Quiet Move가 지역 조건(World State)에 따라 어떻게 달라지는지 탐색(스펙 §32-P).
+비교 대상: 서울 / 경기 성남(분당, 본 시뮬레이션) / 광역시(대전·광주 등) / 읍면(군 지역).</p>
+</blockquote>
+<hr />
+<h2>P-1. 지역 조건 요약 (World State 기반)</h2>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>서울</th>
+<th>경기도(분당)</th>
+<th>광역시</th>
+<th>읍면(군)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사교육비(학생 1인당 월)</td>
+<td>66.3만(최고)</td>
+<td>49.9만</td>
+<td>43.6만</td>
+<td>32.5만(최저)</td>
+</tr>
+<tr>
+<td>사교육 참여율</td>
+<td>82.6%</td>
+<td>78.5%</td>
+<td>~76%</td>
+<td>~50%미만(추정)</td>
+</tr>
+<tr>
+<td>학원 밀집</td>
+<td>극도(강남·목동)</td>
+<td>높음(분당)</td>
+<td>중</td>
+<td>낮음(학원 1~2곳)</td>
+</tr>
+<tr>
+<td>통학</td>
+<td>지하철·도보</td>
+<td>지하철·버스(분당선)</td>
+<td>지하철·버스</td>
+<td><strong>통학버스 의존</strong></td>
+</tr>
+<tr>
+<td>늘봄(온동네 돌봄)</td>
+<td>보편화 계열</td>
+<td>보편화</td>
+<td>실행 중</td>
+<td>학교 거점 왕복</td>
+</tr>
+<tr>
+<td>주거비 부담</td>
+<td><strong>최고(월세 159만)</strong></td>
+<td>높음(월세 115만)</td>
+<td>중</td>
+<td>낮음</td>
+</tr>
+<tr>
+<td>EBS·공교육 인프라</td>
+<td>풍부</td>
+<td>풍부</td>
+<td>중</td>
+<td>제한(인터넷 의존)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>P-2. QM별 지역 재현성</h2>
+<h3>QM-01 (준비물 사진)</h3>
+<ul>
+<li><strong>서울/경기</strong>: ✅ 동일. 사진 촬영·단톡은 지역 무관.</li>
+<li><strong>광역시</strong>: ✅ 동일.</li>
+<li><strong>읍면</strong>: ◐ — '통학버스 탑승 체크'로 객체 변경. <em>택승 전 가방 사진</em>으로 확인 주체를 아이로 이전 가능. 다만 통학버스가 먼 시골은 '가방을 버스에 두고 내림' 사례가 잦아 <strong>탑승 전/하차 후 2사진</strong> 변형 필요.</li>
+</ul>
+<h3>QM-02 (주간 스크린 리뷰)</h3>
+<ul>
+<li><strong>전 지역</strong>: ✅ 동일(OS 기능이므로 지역 무관). 다만...</li>
+<li><strong>읍면</strong>: ◐ — 부모가 늦게 귀가하는 농어촌 일손 구조(체제상 저녁 부재) → <strong>일요일 아침</strong>으로 시간 변경.</li>
+</ul>
+<h3>QM-03 (정보 2채널·토요일 회의)</h3>
+<ul>
+<li><strong>서울/경기</strong>: ✅ 원본. 정보 소스가 풍부 → 제한 효과가 셈.</li>
+<li><strong>광역시</strong>: ✅ 부분. 소스 빈약은 오히려 2채널 유지 쉬움.</li>
+<li><strong>읍면</strong>: ◐ — '정보 소스 부족'이 문제(과잉 아님). 2채널 제한이 아니라 <strong>'신뢰 소스 확보'</strong>가 우선. 학원이 적은 지역은 EBS·인터넷 강의(방과후 온라인)가 대체 → 토요일 회의는 동일 적용.</li>
+</ul>
+<h3>QM-04 (1문장 질문)</h3>
+<ul>
+<li><strong>전 지역</strong>: ✅ 완전 동일. 지역 무관(가장 순수한 전이).</li>
+</ul>
+<h3>QM-05 (탈락 카드)</h3>
+<ul>
+<li><strong>서울/경기</strong>: 취준생 밀집 → 채용 공고 풍부. 카드의 '다음 지원' 슬롯이 빠르게 채워짐(효과 ↑).</li>
+<li><strong>광역시/읍면</strong>: 취준 은둔·취업 인프라 부족 → 채용 공고 부족으로 <strong>'환경 요인' 칸이 진짜 환경(공고 없음)을 가리킴</strong> → 카드가 오히려 '자기평가 보호'를 잘 수행(조기 포기 방지). ◐.</li>
+</ul>
+<h3>QM-06 (3-3-3 전환)</h3>
+<ul>
+<li><strong>서울/경기</strong>: ✅ 원본(1인 자취 압박의 해소).</li>
+<li><strong>광역/읍면</strong>: ◐ — 퇴근이 아예 없거나(재택·가족거주) 경계가 흐려 → '업무 종료 선언' 변형.</li>
+</ul>
+<hr />
+<h2>P-3. 지역별로 달라지는 부가 조건</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>서울</th>
+<th>분당</th>
+<th>광역</th>
+<th>읍면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시간 빈곤</td>
+<td>최고(출퇴근 1.5~2h)</td>
+<td>높음</td>
+<td>중</td>
+<td>통학/이동 오버헤드</td>
+</tr>
+<tr>
+<td>공간 여유</td>
+<td>최소(방 전용 부족)</td>
+<td>중</td>
+<td>중</td>
+<td>넓지만 격리</td>
+</tr>
+<tr>
+<td>부모의 밤 공백</td>
+<td>늦은 귀가</td>
+<td>중간</td>
+<td>중간</td>
+<td>일손·농어촌 노동</td>
+</tr>
+<tr>
+<td>디지털 인프라</td>
+<td>최고</td>
+<td>높음</td>
+<td>중</td>
+<td>인터넷 의존(불안정 구간)</td>
+</tr>
+<tr>
+<td>사회자본</td>
+<td>익명화(단절)</td>
+<td>학부모 네트워크</td>
+<td>중</td>
+<td>지역 공동체(야구단·교회 등)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>해석</strong>: QM의 <strong>코어(해석·주체·주기·조건 전환)는 지역 무관</strong>하지만,
+<strong>실행 슬롯(시간·장소·온라인 의존도)</strong>이 지역 조건에 따라 조정된다.</p>
+<hr />
+<h2>P-4. 지역 조정표 (실행 가이드)</h2>
+<table>
+<thead>
+<tr>
+<th>QM</th>
+<th>서울</th>
+<th>경기</th>
+<th>광역</th>
+<th>읍면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QM-01</td>
+<td>원본</td>
+<td>원본</td>
+<td>원본</td>
+<td>탑승 전 2사진 변형</td>
+</tr>
+<tr>
+<td>QM-02</td>
+<td>일요일 저녁</td>
+<td>일요일 저녁</td>
+<td>일요일 저녁</td>
+<td>일요일 아침</td>
+</tr>
+<tr>
+<td>QM-03</td>
+<td>2채널+회의</td>
+<td>2채널+회의</td>
+<td>2채널</td>
+<td>신뢰소스 확충+회의</td>
+</tr>
+<tr>
+<td>QM-04</td>
+<td>원본</td>
+<td>원본</td>
+<td>원본</td>
+<td>원본</td>
+</tr>
+<tr>
+<td>QM-05</td>
+<td>지원 슬롯 풍부</td>
+<td>동일</td>
+<td>공고 부족 대비</td>
+<td>'환경 칸' 활용 극대화</td>
+</tr>
+<tr>
+<td>QM-06</td>
+<td>3-3-3</td>
+<td>3-3-3</td>
+<td>변형</td>
+<td>업무 종료 선언</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>P-5. 지역 검증 결론</h2>
+<ol>
+<li>Quiet Move는 지역별 "불만의 목록"을 세우는 도구가 아니라, <strong>살아가는 조건(통학·시간·소스)에 따라 같은 루프가 어떻게 도는지</strong> 보는 도구다.</li>
+<li>따라서 출력 P의 결론도 "지역별 제품군"이 아니라 <strong>"같은 QM의 슬롯 조정표"</strong>다.</li>
+<li>가장 순수하게 전이되는 QM은 <strong>QM-04(질문 코드)</strong>, 가장 지역 조정이 필요한 QM은 <strong>QM-01·QM-06</strong>(물리적 습관이기 때문).</li>
+</ol></article>
+    <div class="pager"><a class="prev" href="15_cross_persona_validation.html"><span class="cap">‹ 이전</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a><a class="next" href="17_assumptions_unknowns.html"><span class="cap">다음 ›</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

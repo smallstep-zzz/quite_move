@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · A. World State — 살아가는 세계의 조건 — Quiet Move Simulator</title>
+<meta name="description" content="A. World State — 살아가는 세계의 조건">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="active" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 A · World State</div>
+      <h1>A. World State — 살아가는 세계의 조건</h1>
+      <div class="meta">출력 A (World State) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="01_world_state.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>A. World State — 살아가는 세계의 조건</h1>
+<blockquote>
+<p>출력 A | Quiet Move Simulator</p>
+<p>⚠️ 웹 검색은 <strong>세계의 배경(조건)</strong>을 이해하는 데만 사용했다.
+아래 목록에는 "사람들의 불만"이나 "제품/니즈"를 직접 끌어온 항목이 <strong>하나도 없다.</strong>
+이 조건 위에서 페르소나가 생활하며 Needs와 마찰이 <strong>인과적으로</strong> 발생하도록 시뮬레이션한다.</p>
+</blockquote>
+<hr />
+<h2>A-0. 시공간 정의</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가</td>
+<td>대한민국</td>
+</tr>
+<tr>
+<td>지역</td>
+<td>수도권 (경기 성남 분당 신도시를 주무대로 함), 비교 지역에 서울/광역시/읍면 포함(섹션 P 참고)</td>
+</tr>
+<tr>
+<td>시대</td>
+<td>2026년 9월, 초가을</td>
+</tr>
+<tr>
+<td>시뮬레이션 창</td>
+<td>2026. 9. 14(월) ~ 9. 20(일) — 수능 D-66 (2027학년도 수능: 2026. 11. 19, 목)</td>
+</tr>
+<tr>
+<td>계절/기후</td>
+<td>초가을, 아침저녁 쌀쌀, 한낮 맑음 (등·하교·출퇴근에 영향)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>A-1. 인구와 가족 구조</h2>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+<th>출처 성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초중고 학생 수</td>
+<td><strong>483만 6,890명</strong> — 사상 첫 500만 명 붕괴(2026 추계)</td>
+<td>사실(교육부/감사원 인용)</td>
+</tr>
+<tr>
+<td>청년(15–29세) 인구</td>
+<td>782.2만 명 (2026.5)</td>
+<td>사실(통계청)</td>
+</tr>
+<tr>
+<td>청소년 인구(9–24세)</td>
+<td>740.9만 명, 총인구의 14.4% (2026)</td>
+<td>사실(성평등가족부)</td>
+</tr>
+<tr>
+<td>가구 구조</td>
+<td>맞벌이 비중 확대, 자녀 수 1명 가구의 사교육 집중도 최고</td>
+<td>사실(사교육비조사)</td>
+</tr>
+</tbody>
+</table>
+<p>해석: 학령인구가 줄지만 <strong>한 아이에게 쏠리는 관심·지출·감정이 더 조밀</strong>해지는 세계. 평균이 아니라 "아이 1명당 집중도"가 관찰 포인트.</p>
+<h2>A-2. 교육 제도·정책 (2026년 실제 조건)</h2>
+<ul>
+<li><strong>AI 디지털교과서(AIDT) 좌초</strong>: 2025년 초3·4/중1/고1 수학·영어·정보 도입 → 2025.7 초중등교육법 개정으로 '교과서'에서 <strong>'교육자료'로 강등</strong> → 2학기 도입률 전년 대비 약 60% 급감(1,686개교), 10일 이상 활용 학생 8.1%, 미접속 60%. 2026.3 계획됐던 초5·6/중2·고2 확대는 사실상 무력화. 선도학교 1,900교에서만 일부 운영.</li>
+<li>→ 교실 안팎에서 <strong>"새 교육 도구가 왔다가 사라지는 소동"</strong>이 세계의 배경에 깔려 있음. 학부모의 정보 신뢰가 흔들리는 환경.</li>
+<li><strong>온동네 초등돌봄·교육(구 늘봄학교)</strong>: 2026년부터 초1~2 무상 맞춤형 방과후(2시간) + <strong>초3 방과후 프로그램 이용권 연 50만원 바우처</strong> 신설(참여율 42.4%→60% 목표), 돌봄교실(오후 5~7시)·지역사회 협의체 확대.</li>
+<li>→ 맞벌이 초등 가정의 오후 관리 부담이 정책에 의해 완화되는 동시에, <strong>"왜 우리 아이는 신청을 안 했지"라는 관리 추가 업무</strong>가 생기는 세계.</li>
+<li><strong>2027학년도 수능</strong>: 시험일 2026. 11. 19(목), 원서접수 2026. 8~9월, 성적통지 12. 11(금). EBS 연계 50%, 6월/9월 모의평가.</li>
+<li>→ 시뮬레이션 창(9월 중순)은 <strong>수능 D-66, 수시 원서(9. 8~13) 직후, 정시 수험생의 9월 모평 심리정리 시기</strong>.</li>
+<li><strong>초등학교 시간 운영</strong>: 정규수업(보통 8:40~13:00), 방과후/돌봄 별도 신청 운영. 저학년(초1~2) 귀가는 대면 인계 의무가 원칙. 학교 알림장/준비물은 학급 단톡·문서 중심으로 운영(학교별 상이).</li>
+</ul>
+<h2>A-3. 사교육 시장 (실측 통계: 2025년 초중고 사교육비조사)</h2>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사교육비 총액</td>
+<td>27.5조 원 (전년 -5.7%, 5년 만에 감소)</td>
+</tr>
+<tr>
+<td>참여율</td>
+<td>초중고 전체 75.7%, <strong>초 84.4% / 중 73.0% / 고 63.0%</strong></td>
+</tr>
+<tr>
+<td>주당 참여시간</td>
+<td>초 7.4h / 중 7.2h / 고 6.6h</td>
+</tr>
+<tr>
+<td>참여학생 1인당 월평균</td>
+<td><strong>초 51.2만 / 중 63.2만 / 고 79.3만 원</strong> (고1 참여학생 최대 80.6만)</td>
+</tr>
+<tr>
+<td>과목별(참여학생)</td>
+<td>초: 영어 25.1만 → 중: 수학 29.7만 → 고: 수학 39.0만</td>
+</tr>
+<tr>
+<td>지역별(전체 학생)</td>
+<td><strong>서울 66.3만 / 경기 49.9만 / 광역 43.6만 / 읍면 32.5만</strong></td>
+</tr>
+<tr>
+<td>양극화</td>
+<td>사교육 "안 받음" 24.3%(증가) vs <strong>월 100만+ 11.6%(증가)</strong> → '짠내/극단' 동시 확대</td>
+</tr>
+</tbody>
+</table>
+<p>해석: 사교육이 전체로는 줄었지만 <strong>하고 있는 집은 더 촘촘하게</strong> 한다. 학원 일정이 곧 가족 일정이 되는 세계. 초6(58.3만, +12.2%)과 중3(64.5만)이 급증 곡선 — <strong>중학교 진입을 앞둔 학부모의 불안 변곡점</strong>이다(시뮬레이션에 반영).</p>
+<h2>A-4. 청년 고용·취업 (실측: 2026.5~8월 고용동향·청년층 부가조사)</h2>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>청년(15–29) 고용률</td>
+<td>43.8% (전년 -2.4%p, 25개월 연속 하락), 8월 44.1%(-1.0%p), 취업자 46개월 연속 감소</td>
+</tr>
+<tr>
+<td>청년 실업률</td>
+<td>7.2%(5월), 5.4%(8월, 동월 4년 내 최고) / 확장실업률 16.6%</td>
+</tr>
+<tr>
+<td>20대 초반 고용률</td>
+<td>41.6% (-4.2%p) — 가장 크게 하락</td>
+</tr>
+<tr>
+<td>대학 졸업 소요</td>
+<td>평균 4년 5.7개월(역대 최장), 휴학 경험 48.9%</td>
+</tr>
+<tr>
+<td>첫 취업 소요</td>
+<td>평균 11.2개월 / 미취업 1년 이상 비율 48.6%</td>
+</tr>
+<tr>
+<td>첫 일자리 월급</td>
+<td>200~300만 미만 구간 최다</td>
+</tr>
+<tr>
+<td>취업준비 분야</td>
+<td>일반기업체 34%, 일반직 공무원 21.1%</td>
+</tr>
+<tr>
+<td>'쉬었음' 청년</td>
+<td>38.4만(5월 기준), 20~30대 71.7만 — 주된 사유 "원하는 일자리 찾기 어려움 31.0%"</td>
+</tr>
+<tr>
+<td>거시 배경</td>
+<td>경력직 선호·수시채용 확대, 중동 정세·제조업 부진, 주거비 급등</td>
+</tr>
+</tbody>
+</table>
+<p>해석: <strong>기다림의 기간이 길어진 노동시장.</strong> 취준생은 "11개월 기다리는 게 평균"인 세계에서 살며, 1회 탈락이 아니라 월 단위 공백의 감정 잔류를 겪는다. 시뮬레이션의 P10/P11에 직접 반영.</p>
+<h2>A-5. 주거·생활 인프라</h2>
+<ul>
+<li><strong>수도권 월세화 심화</strong>: 서울 아파트 평균 월세 159만(2026.6, 역대 최고), 경기 115만, 인천 102만 — "수도권 월세 100만 시대". 전세 평균 서울 6.2억. 월세 비중 아파트 51.7%.</li>
+<li>전세대출 규제·전세사기 공포 → 월세 선호 가속. 청년 1~2인 가구 주거비 부담 최대 요인.</li>
+<li>교통/인프라: 분당선·수도권 광역버스, 판교 테크노밸리 인접, 통학버스·늘봄 확충. 신도시는 학원 밀집 지역.</li>
+</ul>
+<h2>A-6. 직장 문화·근로시간</h2>
+<ul>
+<li><strong>주52시간제</strong> 전면 적용(2021, 5인 이상). 평균 출근 08:42 / 퇴근 18:19 / 근무 9시간 52분(휴게 포함). 화요일 최장·금요일 최단.</li>
+<li>회식·야근 부담 인식 저하, 워라밸 문화 확산 — <strong>그러나 회사 규모·업종별 격차 큼</strong>(중소기업·전통 조직은 여전히 계층적·야근). 2026년 주52시간 유연화(화이트칼라 이그젬션) 논의 재점화 — 불확실성 추가.</li>
+<li>해석: "퇴근은 빨라졌지만 <strong>마음이 퇴근되지 않는</strong> 시간"이 개인생활의 새 마찰 지점. P14/P15(퇴근 후 페르소나)의 핵심 배경.</li>
+</ul>
+<h2>A-7. 미디어·수면·건강 (청소년 실측)</h2>
+<ul>
+<li>스마트폰 과의존 위험군: 2026년 15.76%(18.3만) / 학교급별 <strong>중학생 최고 17.04%</strong>.</li>
+<li>주중 스마트폰 4.7h / 주말 6.6h(2023). 메신저 이용률: 초 86.4% / 중 99.3% / 고 99.8%.</li>
+<li>평일 평균 수면 7.4h. 중·고교생 41.3% "평소 스트레스", 25.7% 최근 1년 내 우울감 경험.</li>
+<li>해석: 감정·의존은 <strong>측정되는 단계</strong>까지 온 세계. 다만 이 수치는 "진단"이지 "해결 도구"가 아니다 — 도구 부재가 시뮬레이션의 마찰 원인으로 작동한다.</li>
+</ul>
+<h2>A-8. 이 세계가 시뮬레이션에 주는 제약 (World State → Persona 경계 조건)</h2>
+<ol>
+<li>수능 타이밍(11.19)이 고3 가정의 모든 판단을 압축한다.</li>
+<li>초6→중1 전환기의 사교육비 급증곡선(58.3만, +12.2%)이 초등 학부모의 "시작 의사결정"을 촉발한다.</li>
+<li>청년 실업의 길어짐이 취준생의 <strong>반복적인 자기평가 하락</strong>을 만든다.</li>
+<li>주거비 부담이 취준/직장 초년생의 선택권(이사, 학원, 휴식)을 제한한다.</li>
+<li>근로시간은 줄었으나 정신적 퇴근이 없는 조직 문화가 퇴근 이후 행동을 지배한다.</li>
+<li>메신저/스크린 타임 데이터는 존재하나, 부모·자녀가 그 데이터로 대화하는 관행은 없다.</li>
+</ol>
+<blockquote>
+<p>위 6개 조건은 "불만 수집"이 아니라 <strong>살아가는 조건</strong>이다. 이를 바탕으로 다음 섹션 B에서 15개 대표 페르소나를 정의한다.</p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="00_index.html"><span class="cap">‹ 이전</span> Quiet Move Simulator — 출력 인덱스</a><a class="next" href="02_persona_matrix.html"><span class="cap">다음 ›</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

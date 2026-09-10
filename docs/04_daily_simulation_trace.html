@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D · D. Daily Simulation Trace — 실제 생활 흐름 — Quiet Move Simulator</title>
+<meta name="description" content="D. Daily Simulation Trace — 실제 생활 흐름">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="active" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 D · Daily Simulation Trace</div>
+      <h1>D. Daily Simulation Trace — 실제 생활 흐름</h1>
+      <div class="meta">출력 D (Daily Simulation Trace) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="04_daily_simulation_trace.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>D. Daily Simulation Trace — 실제 생활 흐름</h1>
+<blockquote>
+<p>출력 D | 2026. 9. 14(월) ~ 9. 20(일), 수능 D-66</p>
+<p>기록 형식: 각 단계마다 <code>행동</code>뿐 아니라 <code>정신 상태(mental_state)</code>를 함께 기록한다(스펙 §11·§16).
+정상 단계는 압축 표기, <code>⭐</code>(=Turning Point 후보) 지점은 전체 YAML을 기록한다.</p>
+</blockquote>
+<hr />
+<h2>Day 1 — 2026. 9. 14 (월)</h2>
+<h3>가구 A — P07 / P01 / P02</h3>
+<p><strong>07:03 · 주방</strong> — 엄마가 단톡 확인 후 이준(초5)의 가방을 열어 "오늘 체육 있어? 실내화?" 확인.
+  mental: emotion(조바심,0.6) · mood(-0.2↓) · thought("체크 안 하면 사고남") · stress(0.7) · energy(0.4) · motivation(0.8)</p>
+<p><strong>07:12 · 현관</strong> — 이준, 엄마 뒤에서 신발 신으며 "색연필은 거기 있어?" 엄마가 "챙겼어". 이준은 직접 못 확인한 채 나감.
+  mental: emotion(불안잔류,0.4) · mood(0.0) · thought("엄마가 챙겼으니 됐지") · energy(0.6) · confidence(0.5)</p>
+<p><strong>08:20 · 학교</strong> — 1교시 시작 전, 담당 선생이 "미술도구 가져왔어?" — 이준 가방에 색연필 없음(엄마가 넣은 줄 알았지만 전날 밤 꺼냈음). 친구한테 빌림.
+  mental: emotion(당황,0.7) · mood(-0.2↓) · thought("또. 다음부터 내가 확인해야 하나")</p>
+<p><strong>08:55 · 재택 사무실</strong> — 엄마가 학급카톡에서 "오늘 준비물: 색연필, 체육복" 공지를 읽음. "체육복? 아침에 넣어줬는데…."
+  mental: emotion(착란,0.5) · mood(-0.3) · interpretation("아침에 넣은 게 맞나? 가방 뒤졌나?") · stress(0.7)</p>
+<p><strong>12:40 · 학교</strong> — 이준, 점심 후 체육복 상자가 비어 있지 않음 확인 → 실제로는 깜빡함. 체육 시간에 체육복 없이 참여. 교사가 학부모 톡에 "오늘 체육복은?" 사진 전송.
+  mental: emotion(부끄러움,0.8) · mood(-0.4↓) · interpretation("엄마한테 혼날 일이다")</p>
+<p><strong>14:10 · 사무실</strong> — 엄마, 톡 사진 보고 하교 후 "아들 그 친구 엄마한테까지 사고가 퍼졌다"며 자책.
+  mental: emotion(자책,0.8) · mood(-0.5) · thought("이걸 매번 잊어. 내가 시트를 만들어야 하나") → 마찰 누적</p>
+<p><strong>15:00 · 학원(수학)</strong> — 이준, 학원 도착. 전날 숙제 안 푼 것 확인 → 학원 선생 보강 지도. 16:50 귀가.
+  mental: emotion(굴욕,0.5) · mood(-0.3) · interpretation("나는 계획 세워도 안 지켜짐")</p>
+<p><strong>18:20 · 집·거실</strong> — 엄마가 이은채(초6) 학원 후 배차 픽업. 저녁 중 "오늘 학교 낫냐"를 먼저 물음.
+  mental: emotion(평온,0.4) · mood(0.0) · thought("엄마도 할 말 많은가 봄")</p>
+<p><strong>19:40 · 이은채 방</strong> — 이은채가 지유(친구)와 카톡. "내일 미술 시간에 무슨 색 가져와"로 시작해 "반 배정 언제 알려줄까"로. 두통 호소.
+  mental: emotion(설렘+불안,0.5) · mood(+0.1) · interpretation("친구가 있어야 뭐라도 함")</p>
+<p><strong>21:10 · 가족 단톡</strong> — 엄마가 "이준아, 내일 준비물: 연구실·체육복·색연필(새거)"를 걸어둠. 남편 이민호는 익명 좋아요만.
+  mental: emotion(불안 역전,0.5) · mood(-0.3) · thought("내가 세 번 확인해야 해")</p>
+<blockquote>
+<p>⭐ <strong>TP-A1(전환점 후보·소형)</strong>: 이준이 "내일은 내가 가방 찍어서 올릴게" 한마디. 단, 실행 여부 불명.</p>
+</blockquote>
+<hr />
+<h3>가구 B — P08 / P03</h3>
+<p><strong>06:50 · 집</strong> — 박도윤(중2), 엄마가 깨우기 전 기상. (전날 밤 12:40 폰). 아침 말없음.
+  mental: emotion(무기력,0.5) · thought("오늘 수학 수행평가 대충 보면 됨")</p>
+<p><strong>09:00 · 학교</strong> — 2교시 수학 수행평가(문항 6). 절반 풀고 2문제 추측. 답안 제출 후 "망했다"보다 "무난".
+  mental: emotion(무관심,0.4) · mood(-0.3) · interpretation("점수 나오면 또 잔소리겠지")</p>
+<p><strong>17:10 · 집</strong> — 엄마 등장 직전. 방문 닫고 폰으로 야구 하이라이트. 
+  mental: emotion(해방감,0.5) · mood(0.0)</p>
+<p><strong>18:30 · 거실</strong> — 엄마 "오늘 수행평가 어땠어?" — "몰라." 5초 침묵 후 식탁. 
+  mental: emotion(극도의 답답,0.6) · mood(-0.5) · thought("이 대화가 매일 반복, 피하고 싶음")</p>
+<p><strong>20:15 · 방</strong> — 수행평가 관련 카톡(옆반 친구) 확인. 실상: 점수는 겨우 87점이었는데 본인은 이미 82점으로 예측 중.
+  mental: emotion(불안,0.4) · interpretation("엄마한테 저 점수 말하면 양치질까지 잔소리가 이어짐")</p>
+<p><strong>22:30 · 폰 반납</strong> — 엄마가 폰 1층에 둠. 아들, 이불 속 태블릿으로 유튜브 40분(은닉 4회차). 전원 끄지 않음.
+  mental: emotion(죄책감+쾌감, 0.6/0.7) · mood(-0.4)</p>
+<h3>가구 C — P09 / P05</h3>
+<p><strong>06:20 · 아들 기상</strong> — 엄마가 6:10에 간식 + 수면보조음료와 함께 "일어났니?" 톡.
+  mental: emotion(부담,0.5) · thought("리마인드 1개는 괜찮은데")</p>
+<p><strong>07:40 · 등교</strong> — 엄마, 현관에서 "오늘 학원 코칭 몇 시?" 확인. 아들이 "7시" 답하며 나감.
+  mental: emotion(서운함→참음,0.3) · mood(-0.2)</p>
+<p><strong>12:00 · 재택</strong> — 엄마, 입시카페 3곳 순회(30분). "수능 D-66 실전 전략" 글 스크랩 12개 → 데스크탑 폴더. 정보량 증가.
+  mental: emotion(안도감,0.4) · mood(-0.5 유지) · interpretation("정보를 모아야 불안이 잠든다")</p>
+<p><strong>20:40 · 아들 귀가</strong> — 학원 자습 후 귀가. 엄마 "국어는 어땠어, 오늘 3점 틀린 거 진단 봤니?" — 아들이 "응, 봤어(실제로는 앉아만 있었음)".
+  mental: emotion(회피,0.3) · mood(-0.4)</p>
+<p><strong>23:10 · 독서실</strong> — 아들이 오늘치 국어 오답노트를 덮고 잠깐 졸음. 각성 커피 택배 도착(엄마 주문).
+  mental: emotion(피로,0.8) · energy(0.2)</p>
+<h3>P11 박소연 (취준 여)</h3>
+<p><strong>09:30 · 자취방</strong> — 어제 저녁에 "서류 통과" 메일 재확인. 면접 준비 시트를 열지만 10분 뒤 카톡.
+  mental: emotion(희망+불안,0.6) · mood(+0.1) · interpretation("이번엔 달라야지")</p>
+<p><strong>11:20 · 노트북</strong> — 자소서 '도전/실패 경험' 문단을 과거 버전과 맞바꿈 → 버전 충돌. 한글 파일명 <code>최종_진짜최종_final2.hwp</code>. 
+  mental: emotion(짜증,0.5) · mood(-0.1) · friction(버전관리 0.4)</p>
+<p><strong>14:00 · 스터디카페</strong> — 모의 면접 질문지 10개 작성. 2개 질문에 답 막힘 → 자기평가 급락(-0.2 점).
+  mental: emotion(좌절,0.6) · interpretation("너는 아직 부족하다")</p>
+<p><strong>21:00 · 저녁(라면)</strong> — 어머니 통화: "혹시 취업?" 20초 질문 → "응 다 알아서 할게"로 마무리. 자취방 적막.
+  mental: emotion(죄책감,0.5) · mood(-0.3) · 잔류</p>
+<h3>P13 / P15 이하린 (직장인·퇴근 후)</h3>
+<p><strong>08:15 · 지하철</strong> — 카톡 47개, 메일 23건 확인. 출근 전부터 긴장.
+  mental: emotion(긴장,0.5) · energy(0.6)</p>
+<p><strong>14:00 · 화상회의</strong> — 캠페인 리뷰: 상사가 "도달률 이건 아니지 않나" 반복 → 절반만 반영 요청. 
+  mental: emotion(억울,0.6) · interpretation("말로만 해라, 데이터로 반박해야 함")</p>
+<p><strong>18:40 · 퇴근</strong> — 팀 채널에 명시적 '퇴근 알림' 없이 기기만 끔. 지하철에서 '퇴근 후 뭐 하지' 무한 스크롤.
+  mental: emotion(공허,0.4) · energy 0.3</p>
+<p><strong>20:05 · 자취방</strong> — 가방 바닥에 내려놓고 소파에 오래 앉아 폰. 21:20 배달(치킨) 주문 결제 반복 패턴.
+  mental: emotion(무기력,0.7) · thought("지금 멍 때리면 내일 또 일이 쌓인다") · stress(0.7)</p>
+<p><strong>01:15 · 침대</strong> — 모바일 게임 2판 → 유튜브 '퇴근 후 자기계발' 왕복. 취침.
+  mental: emotion(만족+자책,0.3/0.4) · mood(-0.3↓)</p>
+<hr />
+<h2>Day 2 — 2026. 9. 15 (화)</h2>
+<h3>가구 A</h3>
+<p><strong>06:58 · 현관</strong> — 엄마가 이준 가방 재확인 1회(어제 일 때문). 이준이 "나 이제 내가 챙긴다"고 하니 "그래" 대응.
+  mental: emotion(미안,0.4) · mood(-0.2)</p>
+<p><strong>09:20 · 사무</strong> — 학급 단톡 알림 5건 중 3건 무시(행사·준비물). 
+  mental: emotion(과부하,0.6) · friction("확인 앱 3종(학급톡/학원앱/늘봄)·분산")</p>
+<p><strong>14:40 · 이은채</strong> — 미술학원 작품 소개(컬러링) → 엄마 카톡에 즉시 사진 1장. 기분 상승.
+  mental: emotion(뿌듯,0.6) · mood(+0.1)</p>
+<p><strong>19:20 · 저녁</strong> — 이준이 "내일은 준비물 가방에 넣고 찍어서 보여줄게" 실제 시도: 알림장 열고 2분간 체크. 사진은 안 찍음(귀찮음).
+  mental: emotion(성취감,0.4) · mood(+0.1) · ⭐ 약한 성공</p>
+<h3>가구 B</h3>
+<p><strong>18:00 · 집</strong> — 엄마가 학원비·수강전환 안내장(영어 재등록 권유)을 들고 "굳이 안 해도 돼?" 단독 결정 시도 → 아들이 "엄마, 내가 알아서 해"라며 방문 닫음.
+  mental: emotion(폭발 직전,0.7) · interpretation("내 결정권 없음") · mood(-0.6)</p>
+<p><strong>19:05 · 거실</strong> — 2차 대화 시도: 엄마 "너 혼자 다 못 한다, 보조 인터넷 강의만 들어" — 아들이 "응 알겠어요" 형식적 동의. 문서화 안 됨.
+  mental: emotion(분노 억압,0.6)</p>
+<p><strong>23:15 · 폰 반납 후</strong> — 아들, 화장실에서 25분(은닉 시청 2회차 오늘). 엄마는 화장실 앞에서 3분 대기 → 아들들어감.
+  mental: emotion(불안+분노,0.7) · thought("감시하는 거지") · interpretation("내 신뢰 없음")</p>
+<blockquote>
+<p>⭐ <strong>TP-B1</strong>: 엄마가 이 시점에 "화장실 문 앞에서 기다린 순간"을 자체 기록에 남김. (객관: 통제 루프의 극대화)</p>
+</blockquote>
+<h3>가구 C</h3>
+<p><strong>21:00 · 독서실 앞</strong> — 학원이 9월 모평 상세분석(영역별 백분위)을 카톡으로 공지. 엄마 즉시 열람: 국어 79→82, 수학 74→71(하락).
+  mental: emotion(우려,0.8) · mood(-0.7) · thought("수학이 떨어졌네, 교재 바꿔? 강사 문의해?")</p>
+<p><strong>21:35 · 아들 집</strong> — 엄마 "수학 떨어진 거 알고 있지? 이번 주 토요일 상담 잡아놨다" → 아들 "예" 만.
+  mental: emotion(수치,0.5) · mood(-0.3) · interpretation("나는 숫자로만 평가된다")</p>
+<p><strong>22:50 · 자습</strong> — 아들이 수학 기출 1회 40분. 오답 6개. 새벽 1시 10분 취침.
+  mental: emotion(실패감,0.7) · energy(0.2)</p>
+<h3>P11</h3>
+<p><strong>10:10 · 자취방</strong> — 채용담당자로부터 면접 일정(금 13:30, 강남) 확정. 기쁨+공포.
+  mental: emotion(기대+공포,0.7/0.5) · mood(+0.2) · interpretation("드디어 1차 관문이 왔다")</p>
+<p><strong>21:30 · 자기소개서 재작업</strong> — '왜 우리 회사인가' 문단을 4번 재작성. 과거 회사 입장문과 헷갈림. 이력서 파일 3개 파편화.
+  mental: emotion(불안,0.6) · friction(버전·기억 부담 0.5)</p>
+<h3>P13/P15</h3>
+<p><strong>08:40 · 출근</strong> — 어제 피드백 반영 문서를 1장 만들었으나 상사 미검토. 
+  mental: emotion(허탈,0.4)</p>
+<p><strong>19:10 · 퇴근 후</strong> — 지하철에서 이어폰 끼고 아무것도 안 함(멍). 20:15 자취방 도착. 배달(이번엔 컵밥) + OTT. 00:40 취침.
+  mental: emotion(소진,0.8) · interpretation("퇴근 후 삶이 없다") · mood(-0.4)</p>
+<hr />
+<h2>Day 3 — 2026. 9. 16 (수)</h2>
+<h3>가구 A</h3>
+<p><strong>07:00 · 아침</strong> — 이준이 직접 가방 체크 → 색연필 누락 발견 → 직접 넣음. 엄마가 지켜봄(3분). 이준 "됐어! 나 갈게".
+  mental: emotion(성취,0.7) · mood(+0.2) · ⭐ 첫 전과 이틀 연속 성공</p>
+<p><strong>12:00 · 학교</strong> — 이준, 늦봄(?)= 아님. 방과후 X. 하교 13:00.</p>
+<p><strong>15:00 · 학원</strong> — 수학 숙제를 점심에 겨우 함. 피드백 "전보다 낫네". 
+  mental: emotion(조금 기쁨,0.4)</p>
+<p><strong>20:10 · 저녁</strong> — 엄마가 가족 회의 아닌 '루틴 제안': "가방 사진 찍어서 톡에 올리는 거 시작해볼까?" — 이준 OK(황산), 이은채 "우린 오빠니까" 거절 아니고 미정.
+  mental: emotion(긍정,0.5) · mood(+0.1)</p>
+<h3>가구 B</h3>
+<p><strong>12:10 · 학교</strong> — 아들, 수학 수행평가 결과(c) 87점 통지. 친구와 "엄마한테 몇 점이라 할까" 은어.
+  mental: emotion(복잡,0.3) · interpretation("87은 애매. 90으로 말하면 거짓말")</p>
+<p><strong>17:20 · 귀가</strong> — 엄마가 "혹시 점수 나왔어?" — "응"만. 추가 질문 유도 실패, 대화 종료.
+  mental: emotion(분노 내지 수치,0.5)</p>
+<p><strong>20:10 · 야구 경기(친구 직관)</strong> — 아들, 친구 2명과 잠실구장(엄마 사전 통보 없이). 22:40 귀가 예정 안내 → 엄마 통화 3회, "1시간 전에 보고" 지적.
+  mental: emotion(억울,0.6) · interpretation("내 취미까지 통제") · mood(-0.4)</p>
+<p><strong>23:10 · 집</strong> — 엄마가 "야구 다녀올 거면 미리 말해!"로 시작 → 아들 "그냥 갔다 온 건데", 방문 slam. 폰 뺏김(임시).
+  mental: emotion(분노,0.9) · mood(-0.8) · ⭐ <strong>TP-B2</strong>: 엄마가 이 사건으로 "아들은 내 영역을 침범당한다고 생각한다"는 통찰(자체 인터뷰) 기록.</p>
+<h3>가구 C</h3>
+<p><strong>06:30 · 아침</strong> — 엄마가 '아침 단백질·오메가3' 세트(학원영양 상담 받음) 준비.
+  mental: emotion(애정+불안 혼재,0.5)</p>
+<p><strong>13:00 · 학교</strong> — 아들, 6교시 수업 후 졸음 2회. (전날 01:10 취침)
+  mental: emotion(피로,0.8) · energy(0.2)</p>
+<p><strong>21:00 · 독서실</strong> — 집중 40분 후 소강. 스마트폰 5분 → 20분(탐지). 자기속삭임 "본전은 했다".
+  mental: emotion(죄책감,0.4)</p>
+<p><strong>23:40 · 귀가길</strong> — 엄마가 "오늘 몇 시간 공부했어?" — "5시간" (실제 2.5). 거짓말 첫 확인(추정).
+  mental: emotion(죄책감+자기변호,0.6)</p>
+<h3>P11</h3>
+<p><strong>13:30 · 카페</strong> — 친구와 모의 면접 2회차. '자기소개서에 있는 경험이 질문과 다른 방향' 지적받음. 자소서 수정 30분.
+  mental: emotion(당황,0.5) · interpretation("난 면접이 약하다") → <strong>weak guard 신념 형성</strong></p>
+<p><strong>20:30 · 집</strong> — 금요일 면접용 복장 체크. 다림질한 블라우스 구김 → 구매 고민 → '보증금' 압박. 
+  mental: emotion(부담,0.6) · stress(0.7)</p>
+<h3>P13/P15</h3>
+<p><strong>09:00 · 화상</strong> — 팀장이 밤 11시 메신저로 "내일 아침까지 자료" 전달 → 잠 못 자는 패턴 확인.
+  mental: emotion(이중부담,0.6)</p>
+<p><strong>23:40 · 자취방</strong> — 팀장 피드백 반영 재작업. 수면 5시간 반 예고.
+  mental: emotion(긴장,0.7) · energy(0.2) · ⭐ <strong>TP-F1(경계)</strong>: "이번 주 금요일은 일정정리하고 딱 1시간만 더 자자" 결의(역효과 소지).</p>
+<hr />
+<h2>Day 4 — 2026. 9. 17 (목)</h2>
+<h3>가구 A</h3>
+<p><strong>06:50 · 아침</strong> — 이준, 스스로 가방 훑기 3일차. 실패 0회. 엄마는 "이제 안 봐도 되나?" 두 번의 유혹 → 여전히 마지막 한 번은 본다.
+  mental: emotion(안심,0.6) · mood(+0.1)</p>
+<p><strong>13:10 · 학교</strong> — 이은채 사건: 점심시간에 지유가 다른 친구와 반 배정 이야기를 둘에게 안 하고 숨김 → 감정 동요.
+  mental: emotion(서운함,0.7) · interpretation("나 빼고 이야기했나 봐")</p>
+<p><strong>16:30 · 학원</strong> — 이은채, 미술학원에서 '중학교 반 배정 설문' 웹툰(학원 선배 이야기) 공유 → 자기암시.</p>
+<p><strong>19:50 · 집</strong> — 이은채, 엄마에게 "반이 어떻게 배정되는지 알아?" 질문 3연속. 엄마 "모른다고 생각은 하지 마".
+  mental: emotion(불안,0.5) · mood(-0.1)</p>
+<blockquote>
+<p>⭐ <strong>TP-A2(반전)</strong>: 이준이 밤 9시, "내일 준비물 사진"을 <strong>직접 가족 톡에 업로드</strong>. 이은채가 "오빠(형) 대단하네" 반응 → 이준이 다음날 더 수행 의지.</p>
+</blockquote>
+<h3>가구 B</h3>
+<p><strong>16:40 · 집</strong> — 엄마가 폰 지급 재개 + "이번 주말에 스크린타임 보여줘" 합의안 제시(전날 밤 구상). 아들은 "그래 봐라" 비협조적 수용.
+  mental: emotion(의심,0.3) · mood(0.0)</p>
+<p><strong>18:50 · 저녁</strong> — 엄마 "팀(야구) 이기려나?" — 3초 후 아들 "어제 끝내기로 이겼어" → 40초 대화. <strong>첫 화제 비협력적 시작이었으나 이어진 대화.</strong>
+  mental: emotion(놀라움,0.5) · interpretation("엄마가 야구? 신기하네")</p>
+<p><strong>21:30 · 공부 자리</strong> — 아들이 이번 주 1학기 수행평가 종합(87/85/90)을 엄마 앞에 내미는 순간(비자발). "아 87이네" → 엄마가 <strong>"좋아졌잖아"</strong> 한마디(전환 실험).
+  mental: emotion(안도,0.4) · mood(+0.1) · ⭐ <strong>TP-B3(반전 시도)</strong>: 잔소리 대신 인정 → 아들은 다음날부터 평가 공유 가능성 상승.</p>
+<h3>가구 C</h3>
+<p><strong>14:00 · 정시 전략 회의(집)</strong> — 엄마·아빠·아들 3자. 아빠는 "수시 원서는 이미 끝났으니 정시만" 고집, 엄마는 "논술 소수과목 1개라도" 제안. 아들은 정시 한표.
+  mental: emotion(파국의 중압,0.6) · mood(-0.5)</p>
+<p><strong>20:30 · 독서실</strong> — 아들이 오늘 유일한 '자기주도' 90분 집중(수학). 23:30 귀가.
+  mental: emotion(최소 성취,0.3)</p>
+<blockquote>
+<p>⭐ <strong>TP-C1</strong>: 자정 무렵, 아들이 엄마에게 <strong>"엄마, 걱정 그만해도 돼. 난 정시로 가. 정보는 삼아 토요일에 얘기하자"</strong> 라고 처음으로 의견 표출. → 엄마의 정보 강도가 다음 날부터 1/3로 감소(자체 관찰).</p>
+</blockquote>
+<h3>P11</h3>
+<p><strong>19:30 · 어머니 통화</strong> — "이번 면접 언제야? 붙으면 알려줘야지" — 소연 "붙을지 모르는데". 어머니 "이번엔 되겠지" — 오히려 압박.
+  mental: emotion(부담,0.6) · mood(-0.3) · interpretation("엄마한테 번번이 결과=나의 가치")</p>
+<h3>P13/P15</h3>
+<p><strong>08:30 · 출근</strong> — 어제 야간작업 본문 확정. 팀장 "빠르네, 고생했어" → 5초 인정. 
+  mental: emotion(의미,약 +0.2)</p>
+<p><strong>19:40 · 퇴근 후</strong> — 자취방 도착 후 '내일 할 일 3개' 노트 시도(개입 1차) → 1개 완성, 2개는 답이 안 나옴. 폰. 01:00 취침.
+  mental: emotion(절반 성취,0.3) · mood(-0.2)</p>
+<hr />
+<h2>Day 5 — 2026. 9. 18 (금)</h2>
+<h3>가구 A</h3>
+<p><strong>06:55 · 현관</strong> — 이준의 '폰 갤러리 준비물 사진'을 엄마가 아침에 확인(2초). "잘했네." 엄마의 사전 확인 횟수: 어제 2회 → 오늘 1회.
+  mental: emotion(안도+신뢰,0.6) · mood(+0.2)</p>
+<p><strong>19:10 · 저녁</strong> — 이은채, 자발적으로 "엄마, 나 반 배정 확정이벤트? 아니 그냥 기다려볼게" (자기 헤아림). 엄마 "그래, 기다리자" — 두 사람 모두 완화.
+  mental: emotion(평온,0.4)</p>
+<h3>가구 B</h3>
+<p><strong>19:00 · 집</strong> — 스크린타임 공개 합의일. 엄마·아들이 함께 아이폰 '주간 보고' 확인: 게임 14h(주간), 유튜브 9h. 아들이 먼저 웃음. 엄마는 "이거 보고 느끼는 건 이해돼"로 시작해 규칙 개정 논의(22:00 폰 보관 유지는 유지).
+  mental: emotion(당황→수용,0.5) · interpretation("수치보다 함께 본 게 낫다") · ⭐ <strong>TP-B4</strong>: 데이터 리뷰가 갈등이 아닌 대화의 계기가 된 첫 사건.</p>
+<h3>가구 C</h3>
+<p><strong>20:50 · 독서실 밖</strong> — 엄마가 "오늘 하루 어땠어?"(잡담 실험) → 아들 "음… 그냥 3시간 반." "그래도 됐네." → 대화 5분(시험 준비 아닌 이야기).
+  mental: emotion(의외의 안심,0.4) · mood(+0.1)</p>
+<p><strong>23:20 · 귀가</strong> — 수면 6시간 시도 첫날(Day6 아침검증). 
+  mental: emotion(희망,0.3)</p>
+<h3>P11 — 면접 당일</h3>
+<p><strong>13:30 · 강남 면접</strong> — 40분. 질문 8개 중 2개에서 스크립트와 엇갈림. 면접관 반응 무표정.
+  mental: emotion(혼돈,0.6) · interpretation("막았다, 왜 대답이 꼬였지")</p>
+<p><strong>16:00 · 카페</strong> — 탈락 예감 + 정리. "기다려 봐야지. 지원할 곳 여기저기 나열" → 스프레드시트를 안 열고 메모장으로 5곳.
+  mental: emotion(공허+고집,0.5/0.4)</p>
+<blockquote>
+<p>⭐ <strong>TP-O1(경계)</strong>: "이번엔 되겠지"가 "레퍼토리가 없다"는 신념으로 약간 전환되며 다음 지원에서 지원서 작성 회피 경향 강화 예고.</p>
+</blockquote>
+<h3>P13/P15</h3>
+<p><strong>15:00 · 퇴근 전</strong> — 이번 주 마감으로 16:40 종료. 집 가는 지하철에서 유튜브 이어폰 대신 소음방지 켜고 멍=능동 휴식.
+  mental: emotion(덜 무겁,0.3)</p>
+<p><strong>19:30 · 친구 모임</strong> — 대학 친구 3명. 직장 이야기 서로 공유 → "나만 힘든 게 아니다" 인지 교정.
+  mental: emotion(회복,0.6) · mood(+0.5) · 잔류: 주말 기분 고정에 기여</p>
+<p><strong>23:50 · 귀가</strong> — 이번 주 첫 12시 전 취침.
+  mental: emotion(안정,0.5)</p>
+<hr />
+<h2>Day 6 — 2026. 9. 19 (토)</h2>
+<h3>가구 A</h3>
+<p><strong>09:00 · 가족 아침</strong> — 남편 이민호도 참여: 이준이 주간 최초 "엄마 거기 색연필 있어" 정정 요구 → 전체가 웃음. 이준 신뢰감 +1.
+  mental: emotion(편안,0.6)</p>
+<p><strong>14:00 · 학원(수학)</strong> — 주말 학원 후 자유시간. 이준, 폰 대신 친구들과 축구(외출 허용). 엄마가 처음으로 "밖에 나가도 돼" 허용.
+  mental: emotion(기쁨,0.8)</p>
+<p><strong>19:00 · 저녁</strong> — 이은채가 미술학원 전시회 관람(가족). 기분 상승. 
+  mental: emotion(뿌듯,0.7)</p>
+<h3>가구 B</h3>
+<p><strong>11:00 · 스크린타임 주간 리뷰 2회차(합의 지속)</strong> — 엄마가 "이번 주 게임 어떤 레벨까지 갔어?" → 8분 대화(게임 세계관). 
+  mental: emotion(연결감,0.5) · <strong>TP-B5</strong>: '비난 아닌 관심'의 효과 확인.</p>
+<p><strong>16:30 · 야구 직관(엄마 동행 최초)</strong> — 확률상 비, 지붕 없는 좌석 우천 취소 → 20분 우왕좌왕(왕복 예정 변경) → 실내편의점에서 대기. 엄마 "내 비용" 인식 아들에 전달(X, 음성만).
+  mental: emotion(함께함,0.6)</p>
+<h3>가구 C</h3>
+<p><strong>10:00 · 정보 단일화 회의</strong> — 어제 합의대로 입시정보 채널을 2개로 축소(카페 1·뉴스1), 엄마 전용 메모장 1개 생성.
+  mental: emotion(결정감,0.5) · mood(+0.2) · ⭐ 엄마의 정보 체크 횟수 15→6회/일 하락.</p>
+<p><strong>21:00 · 독서실(새벽)</strong> — 수능 D-60 진행 중인 수강생들로 조용. 아들, 2시간 20분 집중 2세트.
+  mental: emotion(집중,0.6) · energy(0.3)</p>
+<h3>P11</h3>
+<p><strong>13:00 · 알바(카페)</strong> — 5시간. 손님 응대 중 "이 인생이 되냐" 자문 0.3초. 퇴근 후 새벽에 탈락 이메일 확인 → 00:20.
+  mental: emotion(충격,0.8) · mood(-0.9) · <strong>TP-O2</strong>: 면접 탈락 확정. </p>
+<h3>P13/P15</h3>
+<p><strong>10:00 · 자취방 정리</strong> — 잠 깊음(6.5h). 창문 열고 바람. OTT 정주행 2편.
+  mental: emotion(회복,0.5)</p>
+<p><strong>22:00 · '월요일 첫 일' 카드 작성 2차(성공)</strong> — '월요일 첫 할 일: 캠페인 리포트 1장'. 
+  mental: emotion(약간의 명료함,0.4) · ⭐ <strong>TP-F2</strong>: 주말 중 첫 '다음 주 예약' 성공.</p>
+<hr />
+<h2>Day 7 — 2026. 9. 20 (일)</h2>
+<h3>가구 A</h3>
+<p><strong>10:30 · 가족장보기</strong> — 엄마가 "이번 주 우리 집 확인 횟수 줄었다"고 남편에게 언급(주간 평가). 이준 귀에 들어감.
+  mental: emotion(자부,0.5)</p>
+<p><strong>17:00 · 주간 회고(가족)</strong> — 아이들 준비물 누락 "0회"(지난주 3회), 엄마 확인 2주 14회→9회. '가방 사진 루틴'을 정식 규칙으로 채택(월-금 실시, 토-일 선택).
+  mental: emotion(성취,0.7) · mood(+0.3) · ⭐ <strong>주간 성과 확정</strong></p>
+<h3>가구 B</h3>
+<p><strong>15:00 · 주간 정리</strong> — 엄마·아들 스크린타임 3회차 리뷰: 게임 12h(↓2h), 채팅 5h. "고1 때부터는 정량목표" 논의가 최초로 '협상'이 아닌 '대화'로 진행.
+  mental: emotion(진전,0.5)</p>
+<p><strong>19:30 · 가족 저녁(남편 합류)</strong> — 집안 분위기가 이 주 첫 '평온' 단계 측정.</p>
+<h3>가구 C</h3>
+<p><strong>12:00 · 점심</strong> — 엄마가 '수면 6시간' 실제 여부 확인 사진(간단) 요청 → 아들 "응, 11시 40분 잤어"(진실). 엄마는 추가 질문 자제.
+  mental: emotion(안심,0.5)</p>
+<p><strong>18:00 · 주간 소회</strong> — 정보 채널 2개 축소 유지, 잡담 3회 성공. 아들 "엄마, 토요일에 엄마도 나랑 게임" (처음 제안) — 식탁 웃음.
+  mental: emotion(온기,0.6) · mood(+0.2)</p>
+<h3>P11</h3>
+<p><strong>전일</strong> — 탈락 후 감정 정리: "이번 주는 재정착" 선언(자필 메모). 지원 목록 재작성: 다음 주 월 2곳 지원. 
+  mental: emotion(회복 의지,0.4) · mood(-0.2→+0.1) · <strong>TP-O3</strong>: '지원 간격 하루' 루틴 첫 시도(월·수).</p>
+<h3>P13/P15</h3>
+<p><strong>18:00 · 주간 계획</strong> — '내일 첫 할 일' 3주 연속 준비. 저녁 9시 전까지 폰을 소파에 두는 루틴 제안(자기 대화).
+  mental: emotion(평정,0.5) · energy(0.6)</p>
+<hr />
+<h2>D-99. 주간 합산 요약</h2>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>가구 A</th>
+<th>가구 B</th>
+<th>가구 C</th>
+<th>P11</th>
+<th>P13/P15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>확인·재확인 행동(주간 합)</td>
+<td>14회→<strong>9회</strong></td>
+<td>감시성 확인 3회→1회</td>
+<td>정보 체크 15→6회/일</td>
+<td>지원 서류 재열람 5회</td>
+<td>퇴근 후 폰 4.5h→3.5h</td>
+</tr>
+<tr>
+<td>감정 폭발/갈등 사건</td>
+<td>2→0</td>
+<td>4→2</td>
+<td>2→1(정적)</td>
+<td>2(혼자 감당)</td>
+<td>0(내적)</td>
+</tr>
+<tr>
+<td>의사표현(자녀)</td>
+<td>2회</td>
+<td>1회(야구)</td>
+<td><strong>1회(정시 선언)</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>새 루틴 정착</td>
+<td>O(가방 사진)</td>
+<td>O(주말 스크린 리뷰)</td>
+<td>O(정보 단일화·잡담)</td>
+<td>△(지원 간격)</td>
+<td>O(내일 첫 일 카드)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>❗ Observer 판독: 이번 주는 "통제"가 아니라 <strong>"공동 확인 대상"을 바꾼 주</strong>였다.
+가구 A는 확인 주체를 엄마→아이로, 가구 B는 감시를 "데이터 함께 보기"로, 가구 C는 정보 수집을 제한했다.
+각각의 행동 비용은 거의 같았고(10초~1분), 감정 비용만 크게 줄었다.</p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="03_persona_state.html"><span class="cap">‹ 이전</span> C. Persona State — 시작 시점의 페르소나 상태</a><a class="next" href="05_mental_state_timeline.html"><span class="cap">다음 ›</span> E. Mental State Timeline — 시간순 감정·기분·생각</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

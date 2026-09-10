@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C · C. Persona State — 시작 시점의 페르소나 상태 — Quiet Move Simulator</title>
+<meta name="description" content="C. Persona State — 시작 시점의 페르소나 상태">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="active" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 C · Persona State</div>
+      <h1>C. Persona State — 시작 시점의 페르소나 상태</h1>
+      <div class="meta">출력 C (Persona State) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="03_persona_state.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>C. Persona State — 시작 시점의 페르소나 상태</h1>
+<blockquote>
+<p>출력 C | Day-0(2026. 9. 13 일요일 밤) 기준, 각 페르소나의 현재 상태 스냅샷.
+이후 섹션 D~N의 모든 변화는 이 기준점에서 출발한다.</p>
+</blockquote>
+<hr />
+<h2>C-1. 가구 A — P07·P01·P02 (초등 가정)</h2>
+<h3>P01 이준 (초5) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion:
+    primary: excitement
+    secondary: guilt
+    intensity: 0.5
+  mood:
+    level: +0.3   # 주말치곤 평온
+    trend: flat
+  thought:
+    immediate: &quot;내일 색연필 안 가져가면 또 혼난다&quot;
+    concern: &quot;미술시간에 체육복 깜빡하면 안 되는데&quot;
+    interpretation: &quot;엄마는 대신 챙겨주지만, 잊으면 내 잘못&quot;
+  motivation: 0.6
+  stress: 0.3
+  energy: 0.7
+  confidence: 0.5
+</code></pre>
+<ul>
+<li>잔류 메모리: "이번 주에 체육복 1회, 무용 실내화 1회 잊음 → 엄마가 복도로 가방 들고 와서 주고 감" (강도 0.7, 잔류 0.5)</li>
+</ul>
+<h3>P02 이은채 (초6) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion:
+    primary: nervousness
+    secondary: hope
+    intensity: 0.5
+  mood:
+    level: +0.1
+    trend: rising
+  thought:
+    immediate: &quot;중학교 친구 반 배정 생각하면 설렌다&quot;
+    concern: &quot;지금 친구(지유)랑 같은 반 안 될까&quot;
+    interpretation: &quot;진학은 내 인생이 바뀌는 일&quot;
+  motivation: 0.5
+  stress: 0.4
+  energy: 0.6
+  confidence: 0.6
+</code></pre>
+<ul>
+<li>잔류 메모리: "지난달 친구 삼준이(짝꿍)와 다퉜다가 다음 날 화해" (강도 0.6, 잔류 0.2)</li>
+</ul>
+<h3>P07 김서연 (P01·P02 엄마) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion:
+    primary: restlessness
+    secondary: guilt
+    intensity: 0.6
+  mood:
+    level: -0.2
+    trend: declining
+  thought:
+    immediate: &quot;내일 월요일, 두 아이 준비물·학원 다 겹친다&quot;
+    concern: &quot;은채 중학교 준비를 지금부터 안 하면 뒤처질까&quot;
+    interpretation: &quot;체크 안 하면 반드시 사고가 난다&quot;
+  motivation: 0.7
+  stress: 0.7
+  energy: 0.4
+  confidence: 0.4
+</code></pre>
+<ul>
+<li>잔류 메모리: "작년 겨울, 준비물 누락으로 초5 개학 첫날 학교에서 전화 옴" (강도 0.9, 잔류 0.6)</li>
+</ul>
+<hr />
+<h2>C-2. 가구 B — P08·P03 (중학생 가정)</h2>
+<h3>P03 박도윤 (중2) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion:
+    primary: irritation
+    secondary: resignation
+    intensity: 0.6
+  mood:
+    level: -0.3
+    trend: declining
+  thought:
+    immediate: &quot;내일 수학 수행평가인데 어차피 대충 나올 거다&quot;
+    concern: &quot;엄마가 또 점수로 판단하겠지&quot;
+    interpretation: &quot;말해도 소용없다, 조용히 버티면 된다&quot;
+  motivation: 0.3
+  stress: 0.6
+  energy: 0.5
+  confidence: 0.4
+</code></pre>
+<ul>
+<li>잔류 메모리: "지난주 금요일, 중간고사가 막 끝나 수업이 느슨 → 오후 자습 2시간 중 게임 은어 채팅" (강도 0.7, 잔류 0.4)</li>
+<li>가족 규칙: 폰은 23:30까지 1층 거실 보관. (실제로는 화장실·이불 밑 은닉 이력 3회)</li>
+</ul>
+<h3>P08 박지혜 (P03 엄마) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion:
+    primary: worry
+    secondary: exhaustion
+    intensity: 0.8
+  mood:
+    level: -0.5
+    trend: declining
+  thought:
+    immediate: &quot;도윤이 내신이 올라야 하는데 1학기 중간 82점&quot;
+    concern: &quot;폰을 뺏으면 또 욕설하고 방문을 닫을까&quot;
+    interpretation: &quot;내가 뭐라 하면 더 멀어지는 것 같다&quot;
+  motivation: 0.6
+  stress: 0.8
+  energy: 0.3
+  confidence: 0.3
+</code></pre>
+<ul>
+<li>잔류 메모리: "작년 여름 방학, 폰 압수 사건 → 아들이 방문을 광광 두드리며 '미친X' 욕설 → 이웃 소음 민원" (강도 0.9, 잔류 0.7)</li>
+</ul>
+<hr />
+<h2>C-3. 가구 C — P09·P05 (고등/입시 가정)</h2>
+<h3>P05 김우진 (고3) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion:
+    primary: fatigue
+    secondary: determination
+    intensity: 0.7
+  mood:
+    level: -0.4
+    trend: flat
+  thought:
+    immediate: &quot;수능까지 66일, 오늘은 그래도 3시간은 버텼다&quot;
+    concern: &quot;9월 모평 상위 21% — 서강대 문턱에 1mm 모자람&quot;
+    interpretation: &quot;이제는 버티기 외엔 답이 없다&quot;
+  motivation: 0.8
+  stress: 0.8
+  energy: 0.3
+  confidence: 0.55
+</code></pre>
+<ul>
+<li>잔류 메모리: "9월 2일 9월 모평 당일, 국어 1~2문제 체감 난조 → 가채점 후 학원 상담(엄마 옆자리)" (강도 0.8, 잔류 0.5)</li>
+</ul>
+<h3>P09 최미경 (P05 엄마) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion:
+    primary: anxiety
+    secondary: pride(희미)
+    intensity: 0.8
+  mood:
+    level: -0.6
+    trend: declining
+  thought:
+    immediate: &quot;입시 카페에 '고3 겨울방학 실수는 이것' 글 새로 올라왔다&quot;
+    concern: &quot;우진이 수면 5시간, 혹시 나만 몰래 다운되는 건 아닐까&quot;
+    interpretation: &quot;내가 정보를 놓치면 결과가 무너질 것 같다&quot;
+  motivation: 0.9
+  stress: 0.9
+  energy: 0.5
+  confidence: 0.35
+</code></pre>
+<ul>
+<li>잔류 메모리: "2024년 지인이 아들에게 큰 대입 참사 → 그 집 엄마를 회상"(강도 0.8, 잔류 0.6)</li>
+</ul>
+<hr />
+<h2>C-4. 독립 생활자</h2>
+<h3>P06 우연희 (고2) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion: {primary: unease, secondary: ambition, intensity: 0.5}
+  mood: {level: -0.1, trend: flat}
+  thought: {immediate: &quot;다음 주 수행평가 발표&quot;, concern: &quot;친구들 다 잘할 텐데&quot;, interpretation: &quot;발표 떨림=내 부족&quot;}
+  motivation: 0.5
+  stress: 0.5
+  energy: 0.5
+  confidence: 0.5
+</code></pre>
+<h3>P10 최지훈 (취준 남) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion: {primary: apathy, secondary: pressure, intensity: 0.6}
+  mood: {level: -0.5, trend: flat}
+  thought: {immediate: &quot;이번 주는 공고 3개만 나왔다&quot;, concern: &quot;월세 65만 내야 하는데&quot;, interpretation: &quot;시간만 흐르고 내가 멈춘 느낌&quot;}
+  motivation: 0.3
+  stress: 0.8
+  energy: 0.4
+  confidence: 0.3
+</code></pre>
+<h3>P11 박소연 (취준 여) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion: {primary: hope(희미), secondary: fear, intensity: 0.5}
+  mood: {level: -0.2, trend: rising}
+  thought: {immediate: &quot;금요일에 지원했던 회사 서류 검토 중이라더라&quot;, concern: &quot;또 떨어지면?&quot;, interpretation: &quot;이번엔 달라야 하는데&quot;}
+  motivation: 0.7
+  stress: 0.6
+  energy: 0.5
+  confidence: 0.45
+</code></pre>
+<h3>P12 김민준 (직장 남) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion: {primary: neutral, secondary: mild_annoyance, intensity: 0.3}
+  mood: {level: 0, trend: flat}
+  thought: {immediate: &quot;월요일이 다시 온다&quot;, concern: &quot;지난주 커밋일정 밀린 것&quot;, interpretation: &quot;팀장 재확인이 일상&quot;}
+  motivation: 0.6
+  stress: 0.5
+  energy: 0.6
+  confidence: 0.6
+</code></pre>
+<h3>P13/P15 이하린 (직장 여 / 퇴근 후 여성) — Day-0</h3>
+<pre><code class="language-yaml">mental_state:
+  emotion: {primary: tired, secondary: restless, intensity: 0.7}
+  mood: {level: -0.4, trend: flat}
+  thought: {immediate: &quot;월요일 캠페인 리뷰 준비해야 하는데 폰만 만진다&quot;, concern: &quot;이대로면 성과가 안 나서 올해 평가 내려갈까&quot;, interpretation: &quot;퇴근 후에도 뭔가 해야 하는 것 같다&quot;}
+  motivation: 0.4
+  stress: 0.7
+  energy: 0.2
+  confidence: 0.5
+</code></pre>
+<hr />
+<h2>C-5. 시작 상태의 패턴 3가지 (Observer 사전 관찰)</h2>
+<ol>
+<li><strong>관리형 엄마(P07·P08·P09) 3인의 불안 근원이 모두 "정보·체크의 공백"</strong> — 캐릭터가 다름에도 같은 인지 패턴(<code>체크 안 하면 반드시 사고</code>)을 공유.</li>
+<li><strong>자녀 3명(P01·P03·P05)의 감정이 모두 "내 의지 없음/버티기" 쪽으로 수축</strong> — 장기 모니터링 우려.</li>
+<li><strong>독립 생활자(P10·P11·P15)의 공통 연속성 문제: "저녁~밤 시간대의 통제력 소실"</strong> — 각자 다른 이유로 같은 부패 지점을 가짐.</li>
+</ol></article>
+    <div class="pager"><a class="prev" href="02_persona_matrix.html"><span class="cap">‹ 이전</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a><a class="next" href="04_daily_simulation_trace.html"><span class="cap">다음 ›</span> D. Daily Simulation Trace — 실제 생활 흐름</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

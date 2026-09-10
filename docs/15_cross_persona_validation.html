@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O · O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성 — Quiet Move Simulator</title>
+<meta name="description" content="O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="active" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 O · Cross-Persona Validation</div>
+      <h1>O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</h1>
+      <div class="meta">출력 O (Cross-Persona Validation) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="15_cross_persona_validation.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</h1>
+<blockquote>
+<p>출력 O | 각 Quiet Move가 다른 생활 조건의 페르소나에서도 재현되는지, 어디서 실패하는지 검증(스펙 §32-O).
+검증 방법: 시뮬레이션 내 대응 페르소나에 QM '이식' 가상실험 + 근거(행동 조건 공통성)로 판정.</p>
+</blockquote>
+<hr />
+<h2>O-1. QM-01 (준비물 사진) — 재현 가능 페르소나</h2>
+<table>
+<thead>
+<tr>
+<th>페르소나</th>
+<th>재현 가능?</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P01 초5 남</td>
+<td>✅ 원본</td>
+<td>—</td>
+</tr>
+<tr>
+<td>P02 초6 여</td>
+<td>✅ 가능</td>
+<td>학원 준비물·진학 자료(원서 복사본 등)도 '사진 1장' 객체로 처리가능</td>
+</tr>
+<tr>
+<td>P03 중2 남</td>
+<td>△ 약함</td>
+<td>준비물 의존은 줄고 '성적/약속'이 갈등 축 → 객체(사진) 전환은 부차적</td>
+</tr>
+<tr>
+<td>P06 고2 여</td>
+<td>✅ 부분</td>
+<td>수행평가 준비물·도서관 대출 → '사진 리스트' 활용可(학원 앱 대체)</td>
+</tr>
+<tr>
+<td>P11 취준 여</td>
+<td>✅ 변형</td>
+<td>'지원 서류 체크리스트 사진/1판'으로 이식(버전 파편화 F-11 억제)</td>
+</tr>
+<tr>
+<td>P08·P09 엄마</td>
+<td>✅ 반복</td>
+<td>초등 이후 단계에서도 '확인 객체화' 원리는 동일(객체가 다를 뿐)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>재현 조건</strong>: '사진 촬영이 이미 자연스러운 연령대(초등~이십대 초)' + '준비/보고의 객체가 물리적·디지털 사물'일 때. → <strong>10세~28세의 "스스로 증거 남기기" 패턴</strong>으로 일반화 가능.</p>
+<hr />
+<h2>O-2. QM-02 (주간 스크린 리뷰) — 재현 가능 페르소나</h2>
+<table>
+<thead>
+<tr>
+<th>페르소나</th>
+<th>재현 가능?</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P03 중2 남</td>
+<td>✅ 원본</td>
+<td>—</td>
+</tr>
+<tr>
+<td>P01/P02 초등</td>
+<td>✅ 가능</td>
+<td>OS 스크린타임 유아~아동용 제공. 부모가 회의장 역할</td>
+</tr>
+<tr>
+<td>P05 고3</td>
+<td>△ 제한</td>
+<td>사용 시간 자체가 적어 '데이터 리뷰'의 긴급도 낮음(대신 수면·학원 데이터)</td>
+</tr>
+<tr>
+<td>P06 고2</td>
+<td>✅ 부분</td>
+<td>폰+SNS 데이터 → '일정 관리' 데이터로 확장</td>
+</tr>
+<tr>
+<td>P15 퇴근 후</td>
+<td>✅ 변형</td>
+<td><strong>자기 자신</strong>의 스크린타임을 주간 리뷰(자기 대화) → '회고'로 전환</td>
+</tr>
+</tbody>
+</table>
+<p><strong>재현 조건</strong>: '감시-은닉'이 아니라 <strong>'데이터 공동 열람'</strong>이란 장치 자체가 어디든 이식된다.
+→ 자료 유형(게임→SNS→업무 시간)만 바뀐다.</p>
+<hr />
+<h2>O-3. QM-03 (정보 채널 2개·주기 재배치) — 재현 가능 페르소나</h2>
+<table>
+<thead>
+<tr>
+<th>페르소나</th>
+<th>재현 가능?</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P09 입시 엄마</td>
+<td>✅ 원본</td>
+<td>—</td>
+</tr>
+<tr>
+<td>P08 중학 엄마</td>
+<td>✅ 가능</td>
+<td>성적·학원 정보 검색 과잉(동일 구조)</td>
+</tr>
+<tr>
+<td>P07 초등 엄마</td>
+<td>✅ 부분</td>
+<td>학급·늘봄 정보 3종 분산 → '확인 2종 고정'으로 축소</td>
+</tr>
+<tr>
+<td>P11 취준 여</td>
+<td>✅ 변형</td>
+<td>채용 공고 카페·유튜브 순회 → '소스 2개+주 1회 탐색'</td>
+</tr>
+<tr>
+<td>P13 직장 여</td>
+<td>△ 제한</td>
+<td>정보를 개인이 아니라 조직이 공급 → 개인 주기 재배치 제한적</td>
+</tr>
+</tbody>
+</table>
+<p><strong>재현 조건</strong>: '개인이 정보를 소비하는 주도권'을 가진 역할(학부모·취준생)에만 적용. 조직 정보(직장)에는 적용 안 됨.</p>
+<hr />
+<h2>O-4. QM-04 (1문장 경험 질문) — 전 페르소나 공용</h2>
+<table>
+<thead>
+<tr>
+<th>페르소나</th>
+<th>재현 가능?</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P08↔P03</td>
+<td>✅</td>
+<td>본 시뮬레이션 성공(야구 대화 40초)</td>
+</tr>
+<tr>
+<td>P09↔P05</td>
+<td>✅</td>
+<td>잡담 3문장 응답</td>
+</tr>
+<tr>
+<td>P07↔P02·P01</td>
+<td>✅</td>
+<td>"오늘 웃긴 거"는 아동용에도 유효</td>
+</tr>
+<tr>
+<td>P11↔어머니</td>
+<td>✅ 변형</td>
+<td>"취업 소식?" → "요즘 뭐가 제일 재미없어?" — 압박 질문 대체</td>
+</tr>
+<tr>
+<td>P15 자기대화</td>
+<td>✅ 부분</td>
+<td>'오늘의 1문장' 자기 질문(회고)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>재현 조건</strong>: 누구든 하루 중 대화하는 순간만 있으면 된다. <strong>가장 전이율 높은 QM.</strong></p>
+<hr />
+<h2>O-5. QM-05 (탈락 카드) — 재현 가능 페르소나</h2>
+<table>
+<thead>
+<tr>
+<th>페르소나</th>
+<th>재현 가능?</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P11 취준 여</td>
+<td>✅ 원본</td>
+<td>—</td>
+</tr>
+<tr>
+<td>P10 취준 남</td>
+<td>✅ 가능</td>
+<td>서류 탈락 숫자가 많음. 단, '내부 귀인' 강도 차이(관찰 필요)</td>
+</tr>
+<tr>
+<td>P06 고2 여</td>
+<td>✅ 변형</td>
+<td>시험 실패·수행평가 감점 → '통제/환경/다름' 3칸</td>
+</tr>
+<tr>
+<td>P05 고3</td>
+<td>△ 제한</td>
+<td>모평 하락에 사용 가능하지만, '24h 내' 처리의 정서적 여유 부족</td>
+</tr>
+<tr>
+<td>P13 직장 여</td>
+<td>△</td>
+<td>평가 시즌(연말 평가)에 변형 적용 가능</td>
+</tr>
+</tbody>
+</table>
+<p><strong>재현 조건</strong>: '반복 실패에 노출되는 역할'이 공통. 실패의 종류만 다르다(서류·시험·평가).</p>
+<hr />
+<h2>O-6. QM-06 (3-3-3+첫 일 카드) — 재현 가능 페르소나</h2>
+<table>
+<thead>
+<tr>
+<th>페르소나</th>
+<th>재현 가능?</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P13/P15</td>
+<td>✅ 원본</td>
+<td>—</td>
+</tr>
+<tr>
+<td>P12/P14 남</td>
+<td>✅ 부분</td>
+<td>퇴근 후 전환 의식 동일 적용 가능</td>
+</tr>
+<tr>
+<td>P08 중학 엄마</td>
+<td>✅ 변형</td>
+<td>귀가 후 '엄마 모드 전환' 10분</td>
+</tr>
+<tr>
+<td>P07 초등 엄마</td>
+<td>△</td>
+<td>재택이라 '퇴근' 자체가 없음 → '업무 종료 의식'으로 변형</td>
+</tr>
+</tbody>
+</table>
+<p><strong>재현 조건</strong>: '일↔삶의 경계'가 존재하는 역할. 재택(경계 없음)은 변형(업무 종료 선언) 필요.</p>
+<hr />
+<h2>O-7. 재현성 매트릭스 (최종)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>P01</th>
+<th>P02</th>
+<th>P03</th>
+<th>P04</th>
+<th>P05</th>
+<th>P06</th>
+<th>P07</th>
+<th>P08</th>
+<th>P09</th>
+<th>P10</th>
+<th>P11</th>
+<th>P12/14</th>
+<th>P13/15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QM-01</td>
+<td>●</td>
+<td>●</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>○</td>
+<td>●</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr>
+<td>QM-02</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>◐</td>
+<td>●</td>
+<td>◐</td>
+<td>●</td>
+<td>◐</td>
+<td>○</td>
+<td>●</td>
+<td>○</td>
+<td>●(변형)</td>
+</tr>
+<tr>
+<td>QM-03</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>◐</td>
+<td>◐</td>
+</tr>
+<tr>
+<td>QM-04</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr>
+<td>QM-05</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>●</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>●</td>
+<td>●</td>
+<td>◐</td>
+<td>◐</td>
+</tr>
+<tr>
+<td>QM-06</td>
+<td>○</td>
+<td>○</td>
+<td>◐</td>
+<td>◐</td>
+<td>◐</td>
+<td>●</td>
+<td>◐</td>
+<td>●</td>
+<td>●</td>
+<td>◐</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+</tbody>
+</table>
+<p><code>● 직접 적용 / ◐ 변형 적용 / ○ 제한·부적합</code></p>
+<hr />
+<h2>O-8. 재현성에서 뽑은 일반 원칙</h2>
+<ol>
+<li><strong>QM-04(질문 코드)만 모든 페르소나에 ●</strong> — 대화의 단위는 보편 구조.</li>
+<li><strong>부모 축(P07·P08·P09)은 '정보·확인 객체화'(QM-01,03)가 일관 재현</strong> — 부모의 불안은 '모름'이 아니라 '확인 방식'과 관련.</li>
+<li><strong>취준 축(P10·P11)은 QM-05가 강하게 재현</strong> — 실패의 반복 노출이 공통 조건.</li>
+<li><strong>실패 조건은 '경계 없음'(재택)이나 '조직 정보 주도권 없음'(직장)</strong> — 환경 구조가 개인 행동 설계를 지배.</li>
+</ol>
+<blockquote>
+<p>검증 결론: Quiet Move의 핵심은 "사람마다 다른 불만"이 아니라
+<strong>"어느 역할에서나 반복되는 행동 루프의 매개변수"</strong>에 있다. → 페르소나가 달라도 전이가 70~80% 가능.</p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="14_counterfactual_results.html"><span class="cap">‹ 이전</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a><a class="next" href="16_cross_region_validation.html"><span class="cap">다음 ›</span> P. Cross-Region Validation — 지역별 차이</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

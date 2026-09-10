@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L · L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점 — Quiet Move Simulator</title>
+<meta name="description" content="L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="brand"><span class="dot"></span><span><a href="index.html">Quiet Move Simulator</a></span></div>
+    <small>대한민국 2026 · 수능 D-66</small>
+    <input class="search" type="search" placeholder="문서 검색…" oninput="filterDocs(this.value)">
+    <nav id="doc-nav"><a class="" href="index.html"><span class="code">–</span> Quiet Move Simulator — 출력 인덱스</a>
+<a class="" href="01_world_state.html"><span class="code">A</span> A. World State — 살아가는 세계의 조건</a>
+<a class="" href="02_persona_matrix.html"><span class="code">B</span> B. Representative Persona Matrix — 대표 페르소나 매트릭스</a>
+<a class="" href="03_persona_state.html"><span class="code">C</span> C. Persona State — 시작 시점의 페르소나 상태</a>
+<a class="" href="04_daily_simulation_trace.html"><span class="code">D</span> D. Daily Simulation Trace — 실제 생활 흐름</a>
+<a class="" href="05_mental_state_timeline.html"><span class="code">E</span> E. Mental State Timeline — 시간순 감정·기분·생각</a>
+<a class="" href="06_memory_accumulation.html"><span class="code">F</span> F. Memory Accumulation — 기억·감정의 누적과 재활성화</a>
+<a class="" href="07_turning_points.html"><span class="code">G</span> G. Turning Points — 전환점 기록</a>
+<a class="" href="08_interaction_loops.html"><span class="code">H</span> H. Interaction Loops — 사람 사이의 감정 전파·자기강화 고리</a>
+<a class="" href="09_deep_causal_chains.html"><span class="code">I</span> I. Deep Causal Chains — 중요 행동의 깊은 원인 탐색</a>
+<a class="" href="10_branch_map.html"><span class="code">J</span> J. Branch Map — 인과 분기 지도</a>
+<a class="" href="11_friction_map.html"><span class="code">K</span> K. Friction Map — 행동·감정·사회적 비용 지도</a>
+<a class="active" href="12_quiet_moves.html"><span class="code">L</span> L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</a>
+<a class="" href="13_minimal_products.html"><span class="code">M</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a>
+<a class="" href="14_counterfactual_results.html"><span class="code">N</span> N. Counterfactual Results — 개입 전후 비교 (Baseline vs Intervention)</a>
+<a class="" href="15_cross_persona_validation.html"><span class="code">O</span> O. Cross-Persona Validation — 여러 대표 페르소나에서의 재현성</a>
+<a class="" href="16_cross_region_validation.html"><span class="code">P</span> P. Cross-Region Validation — 지역별 차이</a>
+<a class="" href="17_assumptions_unknowns.html"><span class="code">Q</span> Q. Assumptions / Unknowns — 사실과 가정의 구분</a></nav>
+    <div class="toc"><h4>이 문서 목차</h4><ul id="toc"></ul></div>
+  </aside>
+  <main>
+    <div class="doc-head">
+      <div class="crumbs">Quiet Move Simulator / 출력 L · Quiet Moves</div>
+      <h1>L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</h1>
+      <div class="meta">출력 L (Quiet Moves) · 대한민국 2026 · 수능 D-66</div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">인쇄 / PDF</button>
+      <button onclick="toggleCode()">코드 블록 줄바꿈</button>
+      <a href="12_quiet_moves.md" download><button>원본 MD</button></a>
+    </div>
+    <article class="article" id="article"><h1>L. Quiet Moves — 기존 행동 흐름 속의 작은 개입점</h1>
+<blockquote>
+<p>출력 L | 시뮬레이션에서 발견한 6개의 Quiet Move.</p>
+<p><strong>정의(스펙 §30)</strong>: 사람에게 완전히 새로운 생활방식을 강요하지 않고,
+기존 서비스·앱·습관·인간관계를 유지하면서, 흐름 속 <strong>한 지점만</strong> 바꾸는 개입.</p>
+</blockquote>
+<hr />
+<h2>L-1. QM-01 — "준비물 사진 한 장" (초등 가정)</h2>
+<p><strong>기존 흐름 (A→B→C→D)</strong></p>
+<pre><code>[전날 밤] 엄마가 내일 준비물 머릿속 정리
+→ [아침]   엄마가 아이 가방을 열고 확인(불안)
+→ [학교]   누락 발견 시 학교 연락 → 엄마 전달
+→ [저녁]   엄마 단톡 재확인 ... 【매일 반복, 감정 비용 0.6~0.7】
+</code></pre>
+<p><strong>Quiet Move (A→B→C'→D)</strong> — <strong>전날 밤, 아이가 넣은 준비물을 1장 사진으로 가족 톡에 업로드.</strong></p>
+<pre><code>[전날 밤] 아이가 스스로 준비물을 넣고 사진 1장(10초) → 가족 톡
+→ [아침]   엄마는 사진 2초 확인(검색 없음)
+→ [학교]   누락은 아이가 &quot;직접 넣은 것&quot;으로 사전 자체 점검됨
+→ [저녁]   재확인 없음 ... 【고정 매일, 엄마 불안 회피(감정 0.3)】
+</code></pre>
+<ul>
+<li><strong>바꾸는 것</strong>: 확인의 대상(체크리스트→사진), 확인 주체(엄마→아이), 시점(아침→전날 밤)</li>
+<li><strong>남기는 것</strong>: 가족 단톡, 아이의 폰, 기존 준비물 문화(스펙 §19 '찾기→메모하기' 유형)</li>
+<li><strong>작동 원리</strong>: 엄마의 '불안 회피 루프'(F-01)는 <em>있음을 아는 것</em>이 아니라 <em>증거를 보는 것</em>에 반응한다. 사진=증거. 아이는 '주체성'의 스크립트를 얻는다(+1 책임감).</li>
+<li><strong>비용</strong>: 0원. 폰 카메라·가족 채팅방(모두 보유).</li>
+</ul>
+<hr />
+<h2>L-2. QM-02 — "주간 스크린 리뷰 15분" (중학생 가정)</h2>
+<p><strong>기존 흐름</strong></p>
+<pre><code>[매일] 폰 반납 규칙(23:30) → 아이 은닉(방/화장실) → 엄마 확인 강화
+→ [충돌] 압수 → 반발 → 은닉 고도화 ... 【감시-은닉 루프, E=0.8】
+</code></pre>
+<p><strong>Quiet Move</strong> — <strong>일요일 저녁 15분, 부모·아이가 함께 OS '주간 스크린 타임'을 열고 본다. 규칙 변경은 이 자리에서만 협상.</strong></p>
+<pre><code>[평일] 감시 대신 평온 유지(행동은 스크린 데이터가 보여줌)
+→ [일요일 15분] 둘이 데이터 열람: 합계·앱별 · 시간
+→ [협상] 새 규칙은 이 자리에서만(감정 고조 시 연기)
+→ [평일] 규칙 실행 ... 【감시→공유, 은닉 동기 소실】
+</code></pre>
+<ul>
+<li><strong>바꾸는 것</strong>: 감시 수단(몸·확인) → 데이터 공유; 규칙 변경 지점 분리</li>
+<li><strong>남기는 것</strong>: OS 스크린타임 앱(기본 제공), 폰 반납 규칙 자체, 가족 규칙 문화</li>
+<li><strong>작동 원리</strong>: 엄마의 공백 불안(모르는 시간)을 <strong>객관 수치로 채운다</strong>. 아이는 "숨길 필요"가 사라져 협상에 들어간다. 실측: 게임 14h→12h, 갈등 4→2회.</li>
+<li><strong>비용</strong>: 0원. 15분 투자. (부가: 10분도 가능 — 최소 실행 조건)</li>
+</ul>
+<hr />
+<h2>L-3. QM-03 — "입시 정보 채널 2개 + 토요일 협의" (고등/입시 가정)</h2>
+<p><strong>기존 흐름</strong></p>
+<pre><code>[매일] 엄마 정보 채널 3곳 순회 + 스크랩 12개 (E=0.9의 최대 감정 비용)
+→ [매일] 아들 문진(수치 질문) → 거짓/회피 보고
+→ [불신] '숫자 프로토콜' 고착 ... 【과다공급형 루프】
+</code></pre>
+<p><strong>Quiet Move</strong> — <strong>정보 소스를 2개로 고정하고, 가족 협의·정보 공유는 토요일 1시간으로 제한. 평일 문진 금지.</strong></p>
+<pre><code>[월~금] 엄마 신뢰 소스 2개만(카페 1 + 뉴스 1), 수집 15분 → 메모 1장
+[토요일 1h] 가족 회의: 성적·학원·전략을 이 시간에만 업데이트
+[평일] 아들은 공부, 엄마는 '오늘 하루' 한마디 문장만 ... 【주기 재배치】
+</code></pre>
+<ul>
+<li><strong>바꾸는 것</strong>: 정보 수집 주기(매일→주1회 집약), 공유 대상(엄마 혼자→가족), 질문 코드(수치→경험)</li>
+<li><strong>남기는 것</strong>: 신뢰 카페·학원·EBS(모두 유지), 엄마의 정보 통제감(축소된 채널로 유지)</li>
+<li><strong>작동 원리</strong>: 정보는 불안 회피 수단이므로 <strong>제거하면 안 되고 주기만 옮긴다</strong>. 실측: 기본 강도를 1/3로 하면서 아들과의 연결성은 상승.</li>
+<li><strong>비용</strong>: 채널 축소 (무료). 주 1시간 회의 (가족 문화 수정 1건)</li>
+</ul>
+<hr />
+<h2>L-4. QM-04 — "하루 1문장 체크인: 질문 코드 교체" (전 세대 공용)</h2>
+<p><strong>기존 흐름</strong></p>
+<pre><code>&quot;오늘 몇 시간 공부했어?&quot; / &quot;점수 어땠어?&quot; / &quot;왜 말 안 하니?&quot;
+→ [응답] &quot;몰라&quot; / &quot;응&quot;(거짓) → 질문자 불만 ↑ → 더 세게 질문 ... 【단절형 루프】
+</code></pre>
+<p><strong>Quiet Move</strong> — <strong>하루 1번, 하루 1문장의 '경험 질문'.</strong> 예: "오늘 하루에서 힘들었던 거 하나만" / "웃겼던 거 하나만"</p>
+<pre><code>[저녁 5분] 경험 질문 1개(수치 금지)
+→ [응답] 짧은 문장(3~5문장으로 충분)
+→ [부모] 맞장구 1개 → 질문 종료(증폭 금지) ... 【대화의 진입 비용을 낮춤】
+</code></pre>
+<ul>
+<li><strong>바꾸는 것</strong>: 질문의 단위(숫자→경험), 응답 기대치(전모→단편)</li>
+<li><strong>남기는 것</strong>: 식사·차 마실 때의 전통 대화 시간, 부모의 관심(질문은 유지)</li>
+<li><strong>작동 원리</strong>: 거짓 보고(F-09)는 "전체를 보고해야 한다"는 부담에서 나온다 → <strong>단편 1개만 보고하는 프로토콜</strong>로 바꾸면 거짓 유인 소멸. 실측: P05의 3문장 응답, P03의 40초 대화.</li>
+<li><strong>비용</strong>: 0원. (가장 저렴한 QM)</li>
+</ul>
+<hr />
+<h2>L-5. QM-05 — "탈락 해석 카드 24시간" (취업 준비생)</h2>
+<p><strong>기존 흐름</strong></p>
+<pre><code>탈락(사실) → 100% 내부 귀인(&quot;레퍼토리 없음&quot;) → 자기평가 -0.9
+→ 지원 회피/과잉 수정 → 탈락 잔류 승압 ... 【내부형 루프, E=0.8】
+</code></pre>
+<p><strong>Quiet Move</strong> — <strong>탈락 후 24시간 이내, 3문장 카드(노트/메모) 작성 — 통제·환경·다름 3칸.</strong></p>
+<pre><code>[탈락 통지] 24h 안에
+[1] 내가 통제한 것: (예: 면접 답변 1개 수정)   → 내부 귀인을 '부분 통제'로
+[2] 환경 요인: (예: 올해 채용 공고 수, 경력직 선호) → 외부 요인 인지
+[3] 다음에 다르게 할 것 1개: (1개만)            → 행동 방향 고정
+→ 24h 후 지원 재개(간격 2~3일) ... 【탈락을 사건으로 저장, 자기평가로 저장하지 않음】
+</code></pre>
+<ul>
+<li><strong>바꾸는 것</strong>: 탈락의 해석 프레임(총체적 자책→구획 귀인), 다음 행동의 즉시성</li>
+<li><strong>남기는 것</strong>: 지원 트래커, 자소서, 취업 준비 문화(기존 도구 유지)</li>
+<li><strong>작동 원리</strong>: 스펙 §14 — '자기평가 정보'로 저장되는 탈락만 가장 오래 남는다. 카드는 저장 라벨을 <strong>사건 정보</strong>로 바꾼다. 3문장이면 인지 부하가 낮다.</li>
+<li><strong>비용</strong>: 10분. (정체성 카드 역할 — 저항 가능 3일 이내 형성)</li>
+</ul>
+<hr />
+<h2>L-6. QM-06 — "퇴근 3-3-3 + 내일 첫 일 카드" (퇴근 후 성인)</h2>
+<p><strong>기존 흐름</strong></p>
+<pre><code>퇴근 → 소파 폰 90분(무의지) → 야생식 → 취침 01:00 → 다음날 피로 ... 【일주기형 루프】
+</code></pre>
+<p><strong>Quiet Move</strong> — <strong>퇴근 후 10분 내 '전환 의식': 정리 3분 → 씻기 3분 → 물 3분, 그다음 '내일 첫 할 일 1개' 카드 1장.</strong></p>
+<pre><code>퇴근(19:00) → [가방 정리 3분]-[씻기 3분]-[물 3분]
+→ '내일 첫 할 일 1개' 카드(포스트잇/노트) → 폰 자유시간(그대로)
+→ 저녁 시간을 '다시 시작'의 장으로 ... 【무의지 전이→능동 전환】
+</code></pre>
+<ul>
+<li><strong>바꾸는 것</strong>: 퇴근 후의 첫 동작(소파→전환 루틴), 하루 마무리의 예약 지점</li>
+<li><strong>남기는 것</strong>: 폰/OTT/야식 자유(전부 유지), 배달 주문(그대로), 취침 시간(목표는 자율)</li>
+<li><strong>작동 원리</strong>: F-14의 '무의지 상태로의 전이'는 <strong>시작 조건</strong>이 만든다. 전환 동작 3개가 시작 조건을 바꾼다. '내일 첫 일'은 월요일 바다를 1개 섬으로 고정(명료함 0.4 실측).</li>
+<li><strong>비용</strong>: 10분. (타이머 대신 '씻기' 등 자연 동작 사용 — 부가 앱 불필요)</li>
+</ul>
+<hr />
+<h2>L-7. Quiet Move 공통 설계 원칙 (시뮬레이션에서 추출)</h2>
+<ol>
+<li><strong>대상은 감정이 아니다, 루프의 매개변수다</strong> — 불안·분노·걱정을 다루기보다 확인 주체·공개 여부·정보 주기·질문 단위를 바꾼다.</li>
+<li><strong>기존 도구만 사용한다</strong> — 폰 카메라, OS 스크린 타임, 신뢰 카페, 메모장, 씻기. 신규 서비스 불요.</li>
+<li><strong>시간 비용은 0~15분</strong> — 10초~15분. 감정 비용만 0.3~0.9 감소.</li>
+<li><strong>'금지'가 아니라 '재배치'</strong> — 검색을 없애지 않고 주기를 옮기고, 확인을 없애지 않고 주체를 옮긴다.</li>
+<li><strong>시작 조건이 전부다</strong> — 소파 자세, 아침 첫 동작, 질문 첫 단어 같은 '작은 시작'이 루프 방향을 결정한다.</li>
+</ol>
+<blockquote>
+<p>핵심 문장: <strong>"사람은 행동을 바꾸지 않는다. 행동이 도는 조건을 바꾸면 행동이 바뀐다."</strong></p>
+</blockquote></article>
+    <div class="pager"><a class="prev" href="11_friction_map.html"><span class="cap">‹ 이전</span> K. Friction Map — 행동·감정·사회적 비용 지도</a><a class="next" href="13_minimal_products.html"><span class="cap">다음 ›</span> M. Minimal Products — Quiet Move를 구현하는 가장 작은 제품</a></div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
