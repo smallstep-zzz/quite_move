@@ -5,7 +5,7 @@
 
 섹션:
   v1 = output/      일상 시뮬레이션 (A~Q 산출물)
-  v2 = output_v2/   취미·여가 심층 리서치 (Domain 01~06)
+  v2 = output_v2/   취미·여가 + 일상 루틴 심층 리서치 (Domain 01~20)
   v3 = output_v3/   비상장 초기투자 스타트업 스크리닝 (도메인 10 × 기업 19, 투자 시그널 등급)
 
 생성 후 docs/ 를 커밋하고 GitHub Pages 소스를 /docs 로 설정하면 바로 게시됩니다.
@@ -45,8 +45,12 @@ V2_DESC = {
     8: "자산·손실(물타기 루프)", 9: "소유·준비(장비 vs 경험)",
     10: "정기 관계(모임·호스팅)", 11: "기록·선택(촬영 팽창)",
     12: "돌봄·상실(죽음의 죄책감)", 13: "측정·체감(숫자 판정)",
+    14: "일상 루틴 후보 14개 + 추천 6개 선정 근거",
+    15: "공간 주기(미루기 루프)", 16: "기록·연속성(1문장 앵커)",
+    17: "소비·금전(지출 1줄)", 18: "위생 주기(분류 카드)",
+    19: "의사결정 피로(메뉴 1장)", 20: "무형자산 팽창(정리 10분)",
 }
-V2_CODE = {n: f"{n:02d}" for n in range(1, 14)}
+V2_CODE = {n: f"{n:02d}" for n in range(1, 21)}
 
 V3_DESC = {
     1: "비상장 초기투자 스타트업(도메인 10 × 기업 19) 그리드 + 투자 시그널 등급(A~D)",
@@ -65,7 +69,7 @@ SECTIONS = [
     {
         "dir": os.path.join(BASE_DIR, "output_v2"),
         "name": "v2",
-        "label": "v2 · 취미·여가 심층 리서치",
+        "label": "v2 · 취미·여가 + 일상 루틴 심층 리서치",
         "desc": V2_DESC, "code": V2_CODE, "title": {},
     },
     {
@@ -408,10 +412,10 @@ def main():
 
     home = LAYOUT
     home = home.replace("__TITLE__", "Quiet Move Simulator — 홈")
-    home = home.replace("__DESC__", "v1 일상 시뮬레이션 + v2 취미·여가 심층 리서치 + v3 비상장 초기투자 스타트업 스크리닝")
+    home = home.replace("__DESC__", "v1 일상 시뮬레이션 + v2 취미·여가 + 일상 루틴 심층 리서치 + v3 비상장 초기투자 스타트업 스크리닝")
     home = home.replace("__NAV_TITLE__", "Home")
     home = home.replace("__H1__", "Quiet Move Simulator")
-    home = home.replace("__META__", "세 섹션 · v1 시뮬레이션 A~Q / v2 취미·여가 심층 Domain 01~06 / v3 비상장 초기투자 스타트업 스크리닝")
+    home = home.replace("__META__", "세 섹션 · v1 시뮬레이션 A~Q / v2 취미·여가 + 일상 루틴 심층 Domain 01~20 / v3 비상장 초기투자 스타트업 스크리닝")
     home = home.replace("__NAV__", build_sidebar(SECTIONS))
     home = home.replace("__TOOLBAR__", "")
     home = home.replace("__CONTENT__", home_content)
