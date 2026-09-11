@@ -314,13 +314,90 @@
 <hr />
 <h2>진행 방법 (확정 시)</h2>
 <ol>
-<li>각 후보를 <code>08_~~.md</code> ~ <code>&lt;N&gt;_~~.md</code> (A~M 13섹션, 기존 Domain 형식)으로 심층 작성</li>
+<li>각 후보를 <code>08_~~.md</code> ~ <code>&lt;N&gt;_~~.md</code> (A~N 14섹션, 기존 Domain 형식)으로 심층 작성</li>
 <li><code>06_cross_domain.md</code> 교차 비교 표에 신규 분야 행 추가 + Quietness Score 갱신</li>
 <li><code>00_index.md</code> 목차 갱신</li>
 <li><code>python build_site.py</code>로 정적 사이트 재생성</li>
 </ol>
 <blockquote>
 <p>선택되지 않은 후보(C07~C20)는 목록으로만 유지한다. (실사용 수요가 아니라 연구 항목임을 재확인)</p>
+</blockquote>
+<hr />
+<h2>N. 추천 6개의 시장·니즈·수익화 검증 (새 서비스 개발 관점)</h2>
+<blockquote>
+<p><strong>목적</strong>: 추천 6개(개인투자·캠핑·보드게임·사진·가드닝·헬스)를 실제 개발 후보로 볼 때
+시장 존재·지불 니즈·수익화 선례가 있는지 실데이터로 판정한다. (기준일 2026-09-11, 상세 데이터는 각 도메인 파일 N 섹션 참조)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>후보</th>
+<th>시장 존재(규모)</th>
+<th>니즈 존재(미해결)</th>
+<th>수익화 선례</th>
+<th>경쟁</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개인투자(손실 1줄)</td>
+<td>계좌 4,000만·투자 인구 1,042만</td>
+<td>손실자 54.6%·물타기 70%·확인 99회</td>
+<td>⚠️ 광고 중심, 자문업 1,864건</td>
+<td>하(투자일기 1만+ 다운로드)</td>
+<td><strong>Go</strong> ⭐</td>
+</tr>
+<tr>
+<td>캠핑(키트 3상자)</td>
+<td>캠핑 인구 700만·시장 10조원</td>
+<td>패킹·장비 인벤토리·일지 공백</td>
+<td>✅ 캠핏 수수료·캠퍼레스트 구독</td>
+<td>상(캠핏 독점 70%)</td>
+<td>조건부 Go</td>
+</tr>
+<tr>
+<td>보드게임(고정 슬롯)</td>
+<td>글로벌 $128억·CAGR 5.5%, 펀딩 +328%</td>
+<td>취소율·리더 부담·룰 설명</td>
+<td>✅ 참가비·월정기·BGA 구독</td>
+<td>하</td>
+<td><strong>Go</strong> ⭐</td>
+</tr>
+<tr>
+<td>사진(원본 1폴더)</td>
+<td>클라우드·편집 구독 성숙</td>
+<td>미분류 95%·선택 1회 흐름 없음</td>
+<td>⚠️ 저장·편집 구독, 선택 정리는 미형성</td>
+<td>하(정리 도구 미성숙)</td>
+<td>조건부 Go</td>
+</tr>
+<tr>
+<td>가드닝(죽은 후 1장)</td>
+<td>키트·스마트팟 구독 검증</td>
+<td>과습 실패·죽음 후 방치</td>
+<td>✅ 키트·하드웨어 구독</td>
+<td>하</td>
+<td><strong>Go</strong> ⭐</td>
+</tr>
+<tr>
+<td>헬스(감각 1줄)</td>
+<td>유료 트레이닝 앱 400억·Fitpot 유료 100만</td>
+<td>체중 강박·감각 도구 공백</td>
+<td>✅ 구독·AI 코치</td>
+<td>중</td>
+<td><strong>Go</strong> ⭐</td>
+</tr>
+</tbody>
+</table>
+<h3>보류 후보(C07~C20)의 1줄 판정</h3>
+<ul>
+<li><strong>조건부 유망</strong>: C16 골프(고비용·결제 마찰 크므로 '예약·레슨 기록' 툴 수요), C09 반려동물(사료·병원 리마인더 — 시장 큼, 규제·생명 민감), C07 홈카페(원두 구독 리커머스 확실, 경쟁 다수).</li>
+<li><strong>중복(A)</strong>: C10 클라이밍·C15 등산·C08 자전거(러닝·낚시와 지표/현장 축 중복), C17 어항(가드닝과 관리 축 중복), C18 키보드·C12 오디오(C11·C04와 탐색 축 중복).</li>
+<li><strong>비추천</strong>: C19 독서·C20 외국어(행동 루프 약함) — 기존 판정 유지.</li>
+</ul>
+<blockquote>
+<p>검증 요약: 추천 6개 중 <strong>5개가 'Go'급</strong>(시장+니즈+수익화 모두 충족), 캠핑·사진은 '조건부 Go'. 공통 기회 = <strong>기록 1줄 무료 진입 → 축적 데이터 → 회고·알림·커머스 업셀</strong> 구조가 반복된다.</p>
 </blockquote></article>
     <div class="pager"><a class="prev" href="06_cross_domain.html"><span class="cap">‹ v2</span> Domain 06 — 교차 비교 (Quiet Move의 공통 구조)</a><a class="next" href="08_investing.html"><span class="cap">다음 ›</span> Domain 08 — 개인투자 (주식·코인)</a></div>
   </main>
