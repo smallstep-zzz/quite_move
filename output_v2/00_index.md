@@ -30,7 +30,14 @@
 | [03_fishing.md](03_fishing.md) | 낚시 | **현장 활동(출조 준비)** | 3 |
 | [04_fashion.md](04_fashion.md) | 패션 쇼핑 | **반복 구매(사이즈·위시)** | 3 |
 | [05_running.md](05_running.md) | 러닝 | **자기계발(기록·크루)** | 3 |
-| [06_cross_domain.md](06_cross_domain.md) | **교차 비교** | Quiet Move 비교 + Quietness Score | — |
+| [07_hobby_candidates.md](07_hobby_candidates.md) | **취미 후보 목록** | 20개 후보 + 추천 6개 선정 근거 | — |
+| [08_investing.md](08_investing.md) | 개인투자 | **자산·손실(물타기 루프)** | 3 |
+| [09_camping.md](09_camping.md) | 캠핑 | **소유·준비(장비 vs 경험)** | 3 |
+| [10_boardgame.md](10_boardgame.md) | 보드게임 | **정기 관계(모임·호스팅)** | 3 |
+| [11_photography.md](11_photography.md) | 사진 | **기록·선택(촬영 팽창)** | 3 |
+| [12_gardening.md](12_gardening.md) | 가드닝 | **돌봄·상실(죽음의 죄책감)** | 3 |
+| [13_health.md](13_health.md) | 헬스 | **측정·체감(숫자 판정)** | 3 |
+| [06_cross_domain.md](06_cross_domain.md) | **교차 비교** | Quiet Move 비교 + Quietness Score (11개 분야) | — |
 
 ---
 

@@ -6,6 +6,7 @@
 섹션:
   v1 = output/      일상 시뮬레이션 (A~Q 산출물)
   v2 = output_v2/   취미·여가 심층 리서치 (Domain 01~06)
+  v3 = output_v3/   비상장 초기투자 스타트업 스크리닝 (도메인 10 × 기업 19, 투자 시그널 등급)
 
 생성 후 docs/ 를 커밋하고 GitHub Pages 소스를 /docs 로 설정하면 바로 게시됩니다.
 """
@@ -40,8 +41,19 @@ V2_DESC = {
     1: "강한 수집 욕구 + 투자(시세)", 2: "실시간 경쟁(복기 루프)",
     3: "현장 활동(출조 준비)", 4: "반복 구매(사이즈·위시)",
     5: "자기계발(기록·크루)", 6: "Quiet Move 교차 비교 + Quietness Score",
+    7: "취미 후보 20개 + 추천 6개 선정 근거",
+    8: "자산·손실(물타기 루프)", 9: "소유·준비(장비 vs 경험)",
+    10: "정기 관계(모임·호스팅)", 11: "기록·선택(촬영 팽창)",
+    12: "돌봄·상실(죽음의 죄책감)", 13: "측정·체감(숫자 판정)",
 }
-V2_CODE = {n: f"{n:02d}" for n in range(1, 7)}
+V2_CODE = {n: f"{n:02d}" for n in range(1, 14)}
+
+V3_DESC = {
+    1: "비상장 초기투자 스타트업(도메인 10 × 기업 19) 그리드 + 투자 시그널 등급(A~D)",
+    2: "사업영역·키워드·투자 라운드·복제 관점 판정",
+    3: "도메인별 이윤창출 평가, 복제 우선순위·회피, 실패 사례(수퍼톤)",
+}
+V3_CODE = {n: f"{n:02d}" for n in range(1, 4)}
 
 SECTIONS = [
     {
@@ -55,6 +67,12 @@ SECTIONS = [
         "name": "v2",
         "label": "v2 · 취미·여가 심층 리서치",
         "desc": V2_DESC, "code": V2_CODE, "title": {},
+    },
+    {
+        "dir": os.path.join(BASE_DIR, "output_v3"),
+        "name": "v3",
+        "label": "v3 · 비상장 초기투자 스크리닝",
+        "desc": V3_DESC, "code": V3_CODE, "title": {},
     },
 ]
 
@@ -122,7 +140,7 @@ def section_cards(sec) -> str:
 
 
 def build_sidebar(sections, current_page=None) -> str:
-    items = ['<a class="home" href="index.html"><span class="code">🏠</span> 홈 · 두 섹션 보기</a>']
+    items = ['<a class="home" href="index.html"><span class="code">🏠</span> 홈 · 세 섹션 보기</a>']
     for sec in sections:
         items.append(f'<div class="sec-label">{sec["label"]}</div>')
         for d in section_docs(sec):
@@ -341,6 +359,10 @@ def page_html(sec, d, raw_md) -> str:
         nav_title = f"v2 · Domain {d['number']:02d}"
         meta = f"v2 심층 리서치 · {title} · WORLD FACT / REFLECTION 태그"
         tab = f"Domain {d['number']:02d} · {title}"
+    if sec["name"] == "v3":
+        nav_title = f"v3 · 비상장 스크리닝 {d['number']:02d}"
+        meta = f"v3 비상장 초기투자 스타트업 스크리닝 · {title} · 기준일 2026-09-11"
+        tab = f"v3 · {title}"
 
     html = LAYOUT
     html = html.replace("__TITLE__", tab + " — Quiet Move Simulator")
@@ -386,10 +408,10 @@ def main():
 
     home = LAYOUT
     home = home.replace("__TITLE__", "Quiet Move Simulator — 홈")
-    home = home.replace("__DESC__", "v1 일상 시뮬레이션 + v2 취미·여가 심층 리서치")
+    home = home.replace("__DESC__", "v1 일상 시뮬레이션 + v2 취미·여가 심층 리서치 + v3 비상장 초기투자 스타트업 스크리닝")
     home = home.replace("__NAV_TITLE__", "Home")
     home = home.replace("__H1__", "Quiet Move Simulator")
-    home = home.replace("__META__", "두 섹션 · v1 시뮬레이션 A~Q / v2 취미·여가 심층 Domain 01~06")
+    home = home.replace("__META__", "세 섹션 · v1 시뮬레이션 A~Q / v2 취미·여가 심층 Domain 01~06 / v3 비상장 초기투자 스타트업 스크리닝")
     home = home.replace("__NAV__", build_sidebar(SECTIONS))
     home = home.replace("__TOOLBAR__", "")
     home = home.replace("__CONTENT__", home_content)
